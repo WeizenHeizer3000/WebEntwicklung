@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c7f7856b-f9a3-4682-8d3d-bceafebabe00" name="htdocs" url="http://localhost">
+        <fileTransfer mountedRoot="C:\xampp\htdocs\Unikrams" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
