@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f8a3486-976e-457a-8aa8-202b13f89c8a" name="Changes" comment="add title to &quot;Hello World&quot;" />
+    <list default="true" id="1f8a3486-976e-457a-8aa8-202b13f89c8a" name="Changes" comment="add title to &quot;Hello World&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +59,7 @@
       <workItem from="1667901180024" duration="118000" />
       <workItem from="1667939930540" duration="638000" />
       <workItem from="1668029103912" duration="952000" />
-      <workItem from="1668360613667" duration="563000" />
+      <workItem from="1668360613667" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="adding index.html">
       <created>1667557193160</created>
@@ -100,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668360933409</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add title to &quot;Hello World&quot;">
+      <created>1668361286030</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668361286030</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
