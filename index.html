@@ -2,9 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>ToDo Liste</title>
+    <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>Hello World! What a day for having a pizza.</h1>
+<div class="container-fluid">
+    <header class="bg-light">
+        Aufgabenplaner: Todos (Aktuelles Projekt)
+    </header>
+    <div class="row">
+        <div class="col-2">
+            <div class="card">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a class="text-decoration-none" href="#">Login</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-decoration-none" href="#">Projekte</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-decoration-none" href="#">Aktuelles Projekt</a>
+                    </li>
+                    <li style="margin-left: 2em" class="list-group-item">
+                        <a class="text-decoration-none" href="#">Reiter</a>
+                    </li>
+                    <li style="margin-left: 2em" class="list-group-item">
+                        <a class="text-decoration-none" href="#">Aufgaben</a>
+                    </li>
+                    <li style="margin-left: 2em" class="list-group-item">
+                        <a class="text-decoration-none" href="#">Mitglieder</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            ToDo:
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">HTML Datei erstellen (Max Mustermann)</li>
+                            <li class="list-group-item">CSS Datei erstellen (Max Mustermann)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Erledigt:
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">PC eigeschaltet (Petra Müller)</li>
+                            <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Verschoben
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Für die Uni lernen (Max Mustermann)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
