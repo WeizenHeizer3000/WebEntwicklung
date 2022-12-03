@@ -1,24 +1,27 @@
 <?php
-$mitglieder = [
-    ['Name', 'E-Mail', 'In Projekt'],
-    ['Max Mustermann', 'mustermann@muster.de', 'True'],
-    ['Petra Müller', 'petra@mueller.de', 'True',]
-];
+$mitglieder = array(
+    array(
+        'Name' => 'Max Mustermann',
+        'E-Mail' => 'mustermann@muster.de',
+        'In Projekt' => True,
+    ),
+    array(
+        'Name' => 'Petra Müller',
+        'E-Mail' => 'petra@mueller.de',
+        'In Projekt' => True,
+    )
+);
 
 function make_tbl($mitglieder){
-    $tbl_array = [];
-    $tbl_array[] = "<table>";
-    foreach($mitglieder as $row){
+    $tbl_array = [];                                # Array initialisieren
+    foreach($mitglieder as $row){                   # Erstellen der rows
         $tbl_array[] = "<tr>";
-        foreach ($row as $cell){
+        foreach ($row as $cell){                    # Erstellen der Zellen
             $tbl_array[] = "<td>$cell</td>";
         }
         $tbl_array[] = "</tr>";
     }
-    $tbl_array[] = "</table>";
-
-    #return table as a string
-    return implode('', $tbl_array);
+    return implode('', $tbl_array);         # Rückgabe des Table als String
 }
 ?>
 
@@ -40,7 +43,18 @@ function make_tbl($mitglieder){
             <?php include("menu.php");?>
         </div>
         <div class="col-8">
-            <?= make_tbl($mitglieder) ?>
+            <table class="table">
+                <thead>
+                <tr class="bg-light">
+                    <th scope="col">Name</th>
+                    <th scope="col">E-Mail</th>
+                    <th scope="col">In Projekt</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?= make_tbl($mitglieder) ?>
+                </tbody>
+            </table>
         </div>
             <div class="col-2">
             </div>
