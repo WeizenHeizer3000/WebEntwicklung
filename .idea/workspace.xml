@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="change 6 im header und Navileiste">
-      <change afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="list group flush">
+      <change afterPath="$PROJECT_DIR$/mitglieder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reiter_array.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
       <workItem from="1668766454890" duration="1261000" />
       <workItem from="1669041687668" duration="36000" />
       <workItem from="1669041788457" duration="2329000" />
-      <workItem from="1670054683535" duration="2790000" />
+      <workItem from="1670054683535" duration="6663000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
@@ -103,7 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669042281083</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Auslagerung Reiter">
+      <created>1670057581570</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670057581570</updated>
+    </task>
+    <task id="LOCAL-00007" summary="list group flush">
+      <created>1670057794740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670057794740</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +139,8 @@
     <MESSAGE value="change 3" />
     <MESSAGE value="change 4 im header" />
     <MESSAGE value="change 5 im header" />
-    <option name="LAST_COMMIT_MESSAGE" value="change 5 im header" />
+    <MESSAGE value="Auslagerung Reiter" />
+    <MESSAGE value="list group flush" />
+    <option name="LAST_COMMIT_MESSAGE" value="list group flush" />
   </component>
 </project>
