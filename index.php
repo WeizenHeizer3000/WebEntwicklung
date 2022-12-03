@@ -33,7 +33,7 @@
                         <div class="card-header">
                             Erledigt:
                         </div>
-                        <ul class="list-group">
+                        <ul class="list-group list-group-flush">
                             <li class="list-group-item">PC eigeschaltet (Petra Müller)</li>
                             <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
                         </ul>
@@ -44,7 +44,7 @@
                         <div class="card-header">
                             Verschoben:
                         </div>
-                        <ul class="list-group">
+                        <ul class="list-group list-group-flush">
                             <li class="list-group-item">Für die Uni lernen (Max Mustermann)</li>
                         </ul>
                     </div>
