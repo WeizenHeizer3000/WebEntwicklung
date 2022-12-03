@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="Speichern der Arrays">
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/mitglieder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

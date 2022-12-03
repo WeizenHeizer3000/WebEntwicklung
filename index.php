@@ -14,7 +14,6 @@
         <div class="col-2">
             <?php include("menu.php");?>
         </div>
-
         <div class="col">
             <div class="row">
                 <div class="col">

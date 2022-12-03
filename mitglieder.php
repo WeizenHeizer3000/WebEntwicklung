@@ -1,25 +1,16 @@
 <?php
-
-$mitglieder = array(
-    array(
-        'Name' => 'Max Mustermann',
-        'E-Mail' => 'mustermann@muster.de',
-        'In Projekt' => True,
-    ),
-    array(
-        'Name' => 'Petra Müller',
-        'E-Mail' => 'petra@mueller.de',
-        'In Projekt' => True,
-    )
-);
+$mitglieder = [
+    ['Name', 'E-Mail', 'In Projekt'],
+    ['Max Mustermann', 'mustermann@muster.de', 'True'],
+    ['Petra Müller', 'petra@mueller.de', 'True',]
+];
 
 function make_tbl($mitglieder){
-
     $tbl_array = [];
     $tbl_array[] = "<table>";
-    foreach( $mitglieder as $row){
+    foreach($mitglieder as $row){
         $tbl_array[] = "<tr>";
-        foreach ( $row as $cell ) {
+        foreach ($row as $cell){
             $tbl_array[] = "<td>$cell</td>";
         }
         $tbl_array[] = "</tr>";
@@ -49,15 +40,7 @@ function make_tbl($mitglieder){
             <?php include("menu.php");?>
         </div>
         <div class="col-8">
-                <?php
-                     #               foreach ($mitglieder as $mitglieder) {
-                     #                   echo($mitglieder['Name'] . '<br>');
-                     #                   echo($mitglieder['E-Mail'] . '<br>');
-                     #                   echo($mitglieder['In Projekt'] . '<br>');
-                     #                   echo '<br/>';
-                     #               }
-                    make_tbl($mitglieder);
-                ?>
+            <?= make_tbl($mitglieder) ?>
         </div>
             <div class="col-2">
             </div>
