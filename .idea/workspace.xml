@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="change 5 im header">
+    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="change 6 im header und Navileiste">
+      <change afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -42,6 +44,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="menu.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/menu.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.menu.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,6 +66,7 @@
       <workItem from="1668766454890" duration="1261000" />
       <workItem from="1669041687668" duration="36000" />
       <workItem from="1669041788457" duration="2329000" />
+      <workItem from="1670054683535" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
