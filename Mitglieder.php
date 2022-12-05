@@ -1,25 +1,8 @@
-<?php
-
-function make_tbl($mitglieder){
-    if (count($mitglieder) == 0)
-        return "<th>keine Einträge vorhanden</th><th></th><th></th>";
-    $tbl_array = [];                                # Array initialisieren
-    foreach($mitglieder as $row){                   # Erstellen der rows
-        $tbl_array[] = "<tr>";
-        foreach ($row as $cell){                    # Erstellen der Zellen
-            $tbl_array[] = "<td>$cell</td>";
-        }
-        $tbl_array[] = "</tr>";
-    }
-    return implode('', $tbl_array);         # Rückgabe des Table als String
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ToDo Liste</title>
+    <title>Übersicht Mitglieder</title>
     <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
 </head>
@@ -30,7 +13,7 @@ function make_tbl($mitglieder){
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("menu.php");?>
+            <?php include("Menu.php");?>
         </div>
         <div class="col-8">
             <table class="table">
@@ -43,9 +26,13 @@ function make_tbl($mitglieder){
                 </thead>
                 <tbody>
                     <?php
+                        include('make_tbl.php');
                         include('mitglieder_array.php');
+                        if(isset($mitglieder))
+                            echo make_tbl($mitglieder);
+                        else
+                            echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
                     ?>
-                    <?= make_tbl($mitglieder) ?>
                 </tbody>
             </table>
         </div>

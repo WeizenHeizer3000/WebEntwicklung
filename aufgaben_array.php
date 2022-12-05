@@ -1,5 +1,4 @@
 <?php
-
 $aufgaben = array(
     array(
         'Aufgabenbezeichnung' => 'HTML Datei erstellen',

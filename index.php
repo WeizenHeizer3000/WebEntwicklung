@@ -12,7 +12,7 @@
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("menu.php");?>
+            <?php include("Menu.php");?>
         </div>
         <div class="col">
             <div class="row">
