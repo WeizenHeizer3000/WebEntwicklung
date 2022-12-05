@@ -1,18 +1,8 @@
 <?php
-$mitglieder = array(
-    array(
-        'Name' => 'Max Mustermann',
-        'E-Mail' => 'mustermann@muster.de',
-        'In Projekt' => True,
-    ),
-    array(
-        'Name' => 'Petra Müller',
-        'E-Mail' => 'petra@mueller.de',
-        'In Projekt' => True,
-    )
-);
 
 function make_tbl($mitglieder){
+    if (count($mitglieder) == 0)
+        return "<th>keine Einträge vorhanden</th><th></th><th></th>";
     $tbl_array = [];                                # Array initialisieren
     foreach($mitglieder as $row){                   # Erstellen der rows
         $tbl_array[] = "<tr>";
@@ -52,6 +42,9 @@ function make_tbl($mitglieder){
                 </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        include('mitglieder_array.php');
+                    ?>
                     <?= make_tbl($mitglieder) ?>
                 </tbody>
             </table>
