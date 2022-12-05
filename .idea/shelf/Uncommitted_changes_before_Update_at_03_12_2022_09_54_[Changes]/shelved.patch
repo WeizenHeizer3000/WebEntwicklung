@@ -1,0 +1,70 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	
++++ b/index.html	
+@@ -7,7 +7,7 @@
+ </head>
+ <body>
+ <div class="container-fluid">
+-    <header class="bg-light mt-4 p-5">
++    <header class="bg-light p-5">
+         <h1 class="display-5 text-center">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
+     </header>
+     <div class="row mt-4">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="change 5 im header">
+-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
++    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="Mannfred weg gemacht und Header Schriftgröße angepasst">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+     </list>
+@@ -54,6 +53,8 @@
+       <workItem from="1668766454890" duration="1261000" />
+       <workItem from="1669041687668" duration="36000" />
+       <workItem from="1669041788457" duration="2329000" />
++      <workItem from="1669145556468" duration="190000" />
++      <workItem from="1670054311299" duration="1296000" />
+     </task>
+     <task id="LOCAL-00001" summary="change 1">
+       <created>1668767385623</created>
+@@ -90,7 +91,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1669042281083</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="Mannfred weg gemacht und Header Schriftgröße angepasst">
++      <created>1669056769585</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1669056769585</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -113,6 +121,7 @@
+     <MESSAGE value="change 3" />
+     <MESSAGE value="change 4 im header" />
+     <MESSAGE value="change 5 im header" />
+-    <option name="LAST_COMMIT_MESSAGE" value="change 5 im header" />
++    <MESSAGE value="Mannfred weg gemacht und Header Schriftgröße angepasst" />
++    <option name="LAST_COMMIT_MESSAGE" value="Mannfred weg gemacht und Header Schriftgröße angepasst" />
+   </component>
+ </project>
+\ No newline at end of file
