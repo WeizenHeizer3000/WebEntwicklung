@@ -16,6 +16,24 @@
             <?php include("Menu.php");?>
         </div>
         <div class="col-8">
+            <div>
+                <header class="p-3"
+                    <h1 class="display-5" Projekt auswählen </h1>
+                </header>
+            </div>
+            <div>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>- Bitte auswählen -</option>
+                    <option value="1">Pizza</option>
+                    <option value="2">Burger</option>
+                    <option value="3">Döner</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary">Auswählen</button>
+                <button type="button" class="btn btn-primary">Bearbeiten</button>
+                <button type="button" class="btn btn-danger">Löschen</button>
+            </div>
 
         </div>
         <div class="col-2">
