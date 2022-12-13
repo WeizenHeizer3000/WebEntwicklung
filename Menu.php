@@ -10,7 +10,7 @@
         <a class="text-decoration-none" href="Login.php">Login</a>
     </li>
     <li class="list-group-item">
-        <a class="text-decoration-none" href="Projekte.php">Projekte</a>
+        <a class="text-decoration-none" href="databaseConnection.php">Projekte</a>
     </li>
     <li class="list-group-item">
         <a class="text-decoration-none" href="index.php">Aktuelles Projekt</a>
