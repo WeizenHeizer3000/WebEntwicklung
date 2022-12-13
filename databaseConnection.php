@@ -81,4 +81,26 @@ else{
         }
     }
     echo ('</ol>');
+
+    echo ("\nAlle Aufgaben, die unter dem Reiter ToDo laufen:");
+    $sql7 = "SELECT aufgaben.name FROM aufgaben join reiter WHERE aufgaben.reiterid = reiter.id and reiter.name = 'ToDo' ";
+    $result = $conn->query($sql7);
+    echo ('<ol>');
+    if ($result->num_rows > 0){
+        while($row = $result->fetch_object()){
+            echo ('<li>'.  $row->name . '</li>');
+        }
+    }
+    echo ('</ol>');
+
+    echo ("\nAlle Aufgaben, die unter dem Reiter ToDo laufen:");
+    $sql7 = "SELECT aufgaben.name FROM aufgaben join reiter WHERE aufgaben.reiterid = reiter.id and reiter.name = 'ToDo' ";
+    $result = $conn->query($sql7);
+    echo ('<ol>');
+    if ($result->num_rows > 0){
+        while($row = $result->fetch_object()){
+            echo ('<li>'.  $row->name . '</li>');
+        }
+    }
+    echo ('</ol>');
 }
