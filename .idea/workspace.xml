@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="datenbankanbindungen">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/databaseConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/projekte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/registrierung.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aufgaben_array.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben_array.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/databaseConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_tbl.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/make_tbl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitglieder_array.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder_array.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reiter_array.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter_array.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/codeigniter/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -39,9 +53,17 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Sebastian Ohs/Documents/GitHub/WebEntwicklung&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Uni\Code\WebEntwicklung\codeigniter\app\Views\pages" />
+      <recent name="C:\Uni\Code\WebEntwicklung\codeigniter\app\Views\templates" />
+      <recent name="C:\Uni\Code\WebEntwicklung" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="menu.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/menu.php">
       <method v="2" />
@@ -66,7 +88,11 @@
       <workItem from="1669041788457" duration="2329000" />
       <workItem from="1670054683535" duration="9859000" />
       <workItem from="1670929385121" duration="2068000" />
-      <workItem from="1670935427622" duration="8391000" />
+      <workItem from="1670935427622" duration="8481000" />
+      <workItem from="1671181157808" duration="638000" />
+      <workItem from="1672229656171" duration="314000" />
+      <workItem from="1672229981891" duration="19344000" />
+      <workItem from="1672680146861" duration="5178000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
@@ -138,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670940725325</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="datenbankanbindungen">
+      <created>1670944037081</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670944037081</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

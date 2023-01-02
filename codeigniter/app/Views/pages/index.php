@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ToDo Liste</title>
-    <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body>
 <div class="container-fluid">
     <header class="bg-light mb-3 mt-4 p-5">
-        <h1 class="display-5 text-center">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-10">
+                <h1 class="display-5">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
+            </div>
+        </div>
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("Menu.php");?>
+            <?php include("menu.php");?>
         </div>
         <div class="col">
             <div class="row">
@@ -52,5 +50,3 @@
         </div>
     </div>
 </div>
-</body>
-</html>
