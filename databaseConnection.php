@@ -93,13 +93,13 @@ else{
     }
     echo ('</ol>');
 
-    echo ("\nAlle Aufgaben, die unter dem Reiter ToDo laufen:");
-    $sql7 = "SELECT aufgaben.name FROM aufgaben join reiter WHERE aufgaben.reiterid = reiter.id and reiter.name = 'ToDo' ";
+    echo ("\nAlle Fälligkeitsdaten und Beschreibungen aller Aufgaben, die Max Mustermann erstellt hat:");
+    $sql7 = "SELECT aufgaben.faelligkeitsdatum, aufgaben.beschreibung FROM aufgaben join mitglieder WHERE aufgaben.erstellerid = mitglieder.id and mitglieder.id =1";
     $result = $conn->query($sql7);
     echo ('<ol>');
     if ($result->num_rows > 0){
         while($row = $result->fetch_object()){
-            echo ('<li>'.  $row->name . '</li>');
+            echo ('<li>'.  $row->faelligkeitsdatum . ' ' . $row->beschreibung. '</li>');
         }
     }
     echo ('</ol>');

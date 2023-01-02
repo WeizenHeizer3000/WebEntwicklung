@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Übersicht Reiter</title>
-    <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
-</head>
-<body>
+<?php include('header.php');?>
 <div class="container-fluid">
     <header class="bg-light mb-3 mt-4 p-5">
-        <h1 class="display-5 text-center">Aufgabenplaner: Reiter</h1>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-10">
+                <h1 class="display-5">Aufgabenplaner: Reiter</h1>
+            </div>
+        </div>
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("Menu.php");?>
+            <?php include("menu.php");?>
         </div>
         <div class="col-8">
             <table class="table">
@@ -21,11 +19,15 @@
                 <tr class="bg-light">
                     <th scope="col">Name</th>
                     <th scope="col">Beschreibung</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
+
                 include('make_tbl.php');
+
                 include('reiter_array.php');
                 if(isset($reiter))
                     echo make_tbl($reiter);
@@ -34,10 +36,29 @@
                 ?>
                 </tbody>
             </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>Bearbeiten/Erstellen</h3>
+            <div class="form-group mt-3">
+                <label for="br">Bezeichnung des Reiters:</label>
+                <input class="form-control mt-3" placeholder="Reiter">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="b">Beschreibung:</label>
+                <textarea class="form-control mt-3" rows="5" placeholder="Beschreibung"></textarea>
+            </div>
+            <br>
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary">Speichern</button>
+                <button type="button" class="btn btn-info">Reset</button>
+            </div>
         </div>
         <div class="col-2">
         </div>
     </div>
 </div>
-</div>
-</body>
+<?php include('footer.php');?>

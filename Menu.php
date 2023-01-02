@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body>
+<?php include('header.php');?>
 <ul class="list-group">
     <li class="list-group-item">
         <a class="text-decoration-none" href="Login.php">Login</a>
     </li>
     <li class="list-group-item">
-        <a class="text-decoration-none" href="databaseConnection.php">Projekte</a>
+        <a class="text-decoration-none" href="Projekte.php">Projekte</a>
     </li>
     <li class="list-group-item">
         <a class="text-decoration-none" href="index.php">Aktuelles Projekt</a>
@@ -25,4 +19,4 @@
         <a class="text-decoration-none" href="Mitglieder.php">Mitglieder</a>
     </li>
 </ul>
-</body>
+<?php include('footer.php');?>
