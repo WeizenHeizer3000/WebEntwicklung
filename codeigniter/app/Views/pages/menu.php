@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body>
+
 <ul class="list-group">
     <li class="list-group-item">
-        <a class="text-decoration-none" href="login.php">Login</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Login/index')?>">Login</a>
     </li>
     <li class="list-group-item">
-        <a class="text-decoration-none" href="projekte.php">Projekte</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Projekte/index')?>">Projekte</a>
     </li>
     <li class="list-group-item">
-        <a class="text-decoration-none" href="index.php">Aktuelles Projekt</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Index/index')?>">Aktuelles Projekt</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="reiter.php">Reiter</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Reiter/index')?>">Reiter</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="aufgaben.php">Aufgaben</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Aufgaben/index')?>">Aufgaben</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="mitglieder.php">Mitglieder</a>
-    </li>
-    <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="databaseConnection.php">Datenbankinfos</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Mitglieder/index')?>">Mitglieder</a>
     </li>
 </ul>
-</body>
+

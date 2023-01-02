@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <header class="bg-light mb-3 mt-4 p-5">
         <div class="row">
@@ -20,7 +21,7 @@
             <div class="mb-3">
                 <label for="inputPassword" class="form-label">Passwort</label>
                 <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
-                </div>
+            </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
@@ -30,19 +31,18 @@
             <button type="button" class="btn btn-primary mt-3">Einloggen</button>
             <div>
                 <?php echo "Noch nicht registriert? "; ?>
-                <a class="text-decoration-none" href="registrierung.php">Registrierung</a>
+                <a class="text-decoration-none" href="<?php echo site_url('Registrierung/index')?>">Registrierung</a>
             </div>
             <div>
                 <br>
                 <?php echo "Da der Login Vorgang technisch noch nicht realisiert wurde:"; ?>
-                <a class="text-decoration-none" href="index.php">Überspringen</a>
+                <a class="text-decoration-none" href="<?php echo site_url('Index/index')?>">Überspringen</a>
             </div>
 
 
         </div>
 
-        </div>
-        <div class="col-2">
-
-        </div>
     </div>
+    <div class="col-2">
+    </div>
+</div>

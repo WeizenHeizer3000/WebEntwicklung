@@ -1,12 +1,19 @@
 <?php
-//$conn2 = new mysqli("localhost", "root", "", "aufgabenplaner");
-$conn = new mysqli("sql587.your-server.de", "schiebkn_1", "w57XVtXN9Qs19d2Y", "schiebkn_db1");
+$conn = new mysqli("localhost", "root", "", "aufgabenplaner");
+$conn2 = new mysqli("sql587.your-server.de", "schiebkn_1", "w57XVtXN9Qs19d2Y", "schiebkn_db1");
+
+if($conn2->connect_error) {
+    die("Keine Verbindung möglich: " . $conn2->connect_error);
+}
+else{
+    echo("Verbunden mit online Datenbank".'<br>');
+}
 
 if($conn->connect_error) {
     die("Keine Verbindung möglich: " . $conn->connect_error);
 }
 else{
-    echo("Verbunden mit online Datenbank".'<br>');
+    echo("Verbunden mit lokaler Datenbank".'<br>');
 
     echo ('<br>'."Mitglieder:");
     $sql1 = "SELECT * FROM mitglieder";
@@ -86,35 +93,14 @@ else{
     }
     echo ('</ol>');
 
-    echo ("\nWer muss welche Aufgaben bis zum 15.12. erledigt haben?:");
-    $sql8 = "SELECT mitglieder.username, aufgaben.beschreibung, aufgaben.faelligkeitsdatum FROM mitglieder join aufgaben 
-             WHERE aufgaben.faelligkeitsdatum < '2022-12-20' and aufgaben.erstellerid = mitglieder.id";
-    $result = $conn->query($sql8);
+    echo ("\nAlle Fälligkeitsdaten und Beschreibungen aller Aufgaben, die Max Mustermann erstellt hat:");
+    $sql7 = "SELECT aufgaben.faelligkeitsdatum, aufgaben.beschreibung FROM aufgaben join mitglieder WHERE aufgaben.erstellerid = mitglieder.id and mitglieder.id =1";
+    $result = $conn->query($sql7);
     echo ('<ol>');
     if ($result->num_rows > 0){
         while($row = $result->fetch_object()){
-            echo ('<li>'.  $row->username.  ' '. $row->beschreibung. ' '. $row->faelligkeitsdatum. '</li>');
-        }
-    }
-    echo ('</ol>');
-
-    echo ("\nAlle Aufgaben die Max erstellt hat:");
-    $sql9 = "SELECT faelligkeitsdatum, beschreibung FROM mitglieder join aufgaben WHERE mitglieder.id = aufgaben.erstellerid and mitglieder.id = 1";
-    $result = $conn->query($sql9);
-    echo ('<ol>');
-    if ($result->num_rows > 0){
-        while($row = $result->fetch_object()){
-            echo ('<li>'.  $row->faelligkeitsdatum.  ' '. $row->beschreibung. '</li>');
+            echo ('<li>'.  $row->faelligkeitsdatum . ' ' . $row->beschreibung. '</li>');
         }
     }
     echo ('</ol>');
 }
-
-//if($conn2->connect_error) {
-//    die("Keine Verbindung möglich: " . $conn2->connect_error);
-//}
-//else{
-//    echo("Verbunden mit lokaler Datenbank".'<br>');
-//
-//
-//}

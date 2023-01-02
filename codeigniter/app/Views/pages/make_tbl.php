@@ -6,10 +6,18 @@ function make_tbl($data){
         $tbl_array = [];                                                  # Array initialisieren
         foreach($data as $row){                                           # Erstellen der rows
             $tbl_array[] = "<tr>";
-            foreach ($row as $cell){                                      # Erstellen der Zellen
-                $tbl_array[] = "<td>$cell</td>";
+            foreach ($row as $cell){# Erstellen der Zellen
+                if($cell==1){
+                    $tbl_array[] ="<td><input class='form-check-input' type='checkbox' value='' id='flexCheckChecked' disabled='disabled' checked></td>";
+                }
+                else if ($cell==0){
+                    $tbl_array[] ="<td><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' disabled='disabled'></td>";
+                }
+                else $tbl_array[] = "<td>$cell</td>";
             }
-            $tbl_array[] = "</tr>";
+
+            $tbl_array[] = "<td><a href=''><i class='fa-solid fa-pen-to-square'></i></a></td>
+                            <td><a href=''><i class='fa-regular fa-trash-can'></i></a></td></tr>";
         }
         return implode('', $tbl_array);                           # Rückgabe des Table als String
     } catch(Exception $e) {
