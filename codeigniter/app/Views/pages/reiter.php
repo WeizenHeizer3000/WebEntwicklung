@@ -14,26 +14,34 @@
             <?php include("menu.php");?>
         </div>
         <div class="col-8">
-            <table class="table">
+            <table class="table table-responsive table-hover d-md-table"
+                   data-show-columns="true"
+                   data-show-toggle="true"
+                   data-sort-stable="true">
                 <thead>
                 <tr class="bg-light">
                     <th scope="col">Name</th>
                     <th scope="col">Beschreibung</th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php
-
-                include('make_tbl.php');
-
-                include('reiter_array.php');
-                if(isset($reiter))
-                    echo make_tbl($reiter);
-                else
-                    echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
-                ?>
+                <? foreach( $reiter as $item ): ?>
+                    <tr>
+                        <td><?= $item['name'] ?></td>
+                        <td><?= $item['beschreibung'] ?></td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="">
+                                    <button type='button' name='btnBearbeiten' id='btnBearbeiten' class='btn'><i style="color: Dodgerblue;" class="fas fa-edit"></i></button>
+                                </a>
+                                <a href="">
+                                    <button type='submit' name='btnLoeschen' id='btnLoeschen' class='btn'><i style="color: Dodgerblue;" class="fas fa-trash"></i></button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                <? endforeach; ?>
                 </tbody>
             </table>
             <br>

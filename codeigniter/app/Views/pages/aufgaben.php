@@ -14,7 +14,10 @@
             <?php include("menu.php");?>
         </div>
         <div class="col-8">
-            <table class="table">
+            <table class="table table-responsive table-hover d-md-table"
+                   data-show-columns="true"
+                   data-show-toggle="true"
+                   data-sort-stable="true">
                 <thead>
                 <tr class="bg-light">
                     <th scope="col">Aufgabenbezeichnung:</th>
@@ -22,18 +25,42 @@
                     <th scope="col">Reiter:</th>
                     <th scope="col">Zuständig:</th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php
-                include('make_tbl.php');
-                include('aufgaben_array.php');
-                if(isset($aufgaben))
-                    echo make_tbl($aufgaben);
-                else
-                    echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
-                ?>
+                <? foreach( $aufgaben as $item ): ?>
+                    <tr>
+                        <td><?= $item['name'] ?></td>
+                        <td><?= $item['beschreibung'] ?></td>
+
+                        <td><? $result = '';
+                            foreach ($reiter as $r): {
+                                if ($item['reiterid']==$r['id'])
+                                    $result = $r['name'];
+                            }
+                            endforeach;
+                            echo $result;
+                            ?></td>
+                        <td><? $result = '';
+                            foreach ($mitglieder as $id): {
+                                if ($item['erstellerid']==$id['id'])
+                                    $result = $id['username'];
+                            }
+                            endforeach;
+                            echo $result;
+                            ?></td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="">
+                                    <button type='button' name='btnBearbeiten' id='btnBearbeiten' class='btn'><i style="color: Dodgerblue;" class="fas fa-edit"></i></button>
+                                </a>
+                                <a href="">
+                                    <button type='submit' name='btnLoeschen' id='btnLoeschen' class='btn'><i style="color: Dodgerblue;" class="fas fa-trash"></i></button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                <? endforeach; ?>
                 </tbody>
             </table>
             <br>

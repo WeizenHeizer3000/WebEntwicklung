@@ -10,13 +10,13 @@
         <a class="text-decoration-none" href="<?php echo site_url('Index/index')?>">Aktuelles Projekt</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="<?php echo site_url('Reiter/index')?>">Reiter</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Reiter/index_edit')?>">Reiter</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="<?php echo site_url('Aufgaben/index')?>">Aufgaben</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Aufgaben/index_edit')?>">Aufgaben</a>
     </li>
     <li class="list-group-item ms-4">
-        <a class="text-decoration-none" href="<?php echo site_url('Mitglieder/index')?>">Mitglieder</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Mitglieder/index_edit')?>">Mitglieder</a>
     </li>
 </ul>
 

@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="c7f7856b-f9a3-4682-8d3d-bceafebabe00" name="htdocs" url="http://localhost">
-        <fileTransfer mountedRoot="C:\xampp\htdocs\Webentwicklung" accessType="MOUNT" port="0" />
+        <fileTransfer mountedRoot="C:\xampp\htdocs" accessType="MOUNT" port="0" />
       </webServer>
       <webServer id="0d5c6838-d2b8-4795-962b-a10a8d0b1cd7" name="hetzner" url="http://www302.your-server.de">
         <fileTransfer accessType="SFTP" host="www302.your-server.de" port="22" sshConfigId="bd4d5e9d-bed2-47a7-b60d-d50b76321dd4" sshConfig="schiebkn_0@www302.your-server.de:22 password">

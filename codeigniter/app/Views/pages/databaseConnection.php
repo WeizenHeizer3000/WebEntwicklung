@@ -1,6 +1,6 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "aufgabenplaner");
-$conn2 = new mysqli("sql587.your-server.de", "schiebkn_1", "w57XVtXN9Qs19d2Y", "schiebkn_db1");
+$conn2 = new mysqli("", "", "", "");
 
 if($conn2->connect_error) {
     die("Keine Verbindung möglich: " . $conn2->connect_error);

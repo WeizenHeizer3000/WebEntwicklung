@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'schiebkn_db1',
+        'hostname' => 'sql587.your-server.de',
         'username' => 'schiebkn_1',
         'password' => 'w57XVtXN9Qs19d2Y',
-        'database' => 'aufgabenplaner',
+        'database' => 'schiebkn_db1',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
