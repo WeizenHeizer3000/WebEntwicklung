@@ -1,0 +1,679 @@
+Index: index.php
+===================================================================
+diff --git a/index.php b/index.php
+deleted file mode 100644
+--- a/index.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,54 +0,0 @@
+-<?php include('header.php');?>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-            <?php include("menu.php");?>
+-        </div>
+-        <div class="col">
+-            <div class="row">
+-                <div class="col">
+-                    <div class="card">
+-                        <div class="card-header">
+-                            ToDo:
+-                        </div>
+-                        <ul class="list-group list-group-flush">
+-                            <li class="list-group-item">HTML Datei erstellen (Max Mustermann)</li>
+-                            <li class="list-group-item">CSS Datei erstellen (Max Mustermann)</li>
+-                        </ul>
+-                    </div>
+-                </div>
+-                <div class="col">
+-                    <div class="card">
+-                        <div class="card-header">
+-                            Erledigt:
+-                        </div>
+-                        <ul class="list-group list-group-flush">
+-                            <li class="list-group-item">PC eigeschaltet (Petra Müller)</li>
+-                            <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
+-                        </ul>
+-                    </div>
+-                </div>
+-                <div class="col">
+-                    <div class="card">
+-                        <div class="card-header">
+-                            Verschoben:
+-                        </div>
+-                        <ul class="list-group list-group-flush">
+-                            <li class="list-group-item">Für die Uni lernen (Max Mustermann)</li>
+-                        </ul>
+-                    </div>
+-                </div>
+-            </div>
+-        </div>
+-    </div>
+-</div>
+-<?php include('footer.php');?>
+Index: codeigniter/app/Controllers/Registrierung.php
+===================================================================
+diff --git a/codeigniter/app/Controllers/Registrierung.php b/codeigniter/app/Controllers/Registrierung.php
+deleted file mode 100644
+--- a/codeigniter/app/Controllers/Registrierung.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,13 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-class Registrierung extends BaseController
+-{
+-    public function index()
+-    {
+-        echo view('templates/header');
+-        echo view('pages/registrierung');
+-        echo view('templates/footer');
+-    }
+-}
+\ No newline at end of file
+Index: Aufgaben.php
+===================================================================
+diff --git a/Aufgaben.php b/Aufgaben.php
+deleted file mode 100644
+--- a/Aufgaben.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,88 +0,0 @@
+-<?php include('header.php');?>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Aufgaben</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-            <?php include("menu.php");?>
+-        </div>
+-        <div class="col-8">
+-            <table class="table">
+-                <thead>
+-                <tr class="bg-light">
+-                    <th scope="col">Aufgabenbezeichnung:</th>
+-                    <th scope="col">Beschreibung der Aufgabe:</th>
+-                    <th scope="col">Reiter:</th>
+-                    <th scope="col">Zuständig:</th>
+-                    <th scope="col"></th>
+-                    <th scope="col"></th>
+-                </tr>
+-                </thead>
+-                <tbody>
+-                <?php
+-                include('make_tbl.php');
+-                include('aufgaben_array.php');
+-                if(isset($aufgaben))
+-                    echo make_tbl($aufgaben);
+-                else
+-                    echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
+-                ?>
+-                </tbody>
+-            </table>
+-            <br>
+-            <br>
+-            <br>
+-            <h3>Bearbeiten/Erstellen</h3>
+-            <div class="form-group mt-3">
+-                <label for="ba">Bezeichnung der Aufgabe:</label>
+-                <input class="form-control mt-3" placeholder="Aufgabe">
+-            </div>
+-            <br>
+-            <div class="form-group">
+-                <label for="b">Beschreibung:</label>
+-                <textarea class="form-control mt-3" rows="5" placeholder="Beschreibung"></textarea>
+-            </div>
+-            <div class="form-group mt-2">
+-                <label for="ba">Erstelldatum:</label>
+-                <input class="form-control mt-3" placeholder="01.01.23">
+-            </div>
+-            <div class="form-group mt-2">
+-                <label for="ba">Fällig bis:</label>
+-                <input class="form-control mt-3" placeholder="01.01.23">
+-            </div>
+-            <div class="mt-3">
+-            Zugehöriger Reiter:
+-                <select class="form-select mt-2" aria-label="Default select example">
+-                    <option selected>- ToDo -</option>
+-                    <option value="1">ToDo</option>
+-                    <option value="2">Erledigt</option>
+-                    <option value="3">Verschoben</option>
+-                </select>
+-            </div>
+-            <div class="mt-3">
+-                Zuständig:
+-                <select class="form-select mt-2" aria-label="Default select example">
+-                    <option selected>- Max Mustermann -</option>
+-                    <option value="1">Max Mustermann</option>
+-                    <option value="2">Petra Müller</option>
+-                </select>
+-            </div>
+-            <br>
+-            <div class="mb-3">
+-                <button type="button" class="btn btn-primary">Speichern</button>
+-                <button type="button" class="btn btn-info">Reset</button>
+-            </div>
+-        </div>
+-        <div class="col-2">
+-        </div>
+-    </div>
+-</div>
+-
+-<?php include('footer.php');?>
+\ No newline at end of file
+Index: Registrierung.php
+===================================================================
+diff --git a/Registrierung.php b/Registrierung.php
+deleted file mode 100644
+--- a/Registrierung.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,1 +0,0 @@
+-<?php
+Index: Mitglieder.php
+===================================================================
+diff --git a/Mitglieder.php b/Mitglieder.php
+deleted file mode 100644
+--- a/Mitglieder.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,68 +0,0 @@
+-<?php include('header.php');?>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Personen</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-            <?php include("menu.php");?>
+-        </div>
+-        <div class="col-8">
+-            <table class="table">
+-                <thead>
+-                <tr class="bg-light">
+-                    <th scope="col">Name</th>
+-                    <th scope="col">E-Mail</th>
+-                    <th scope="col">In Projekt</th>
+-                    <th scope="col"></th>
+-                    <th scope="col"></th>
+-                </tr>
+-                </thead>
+-                <tbody>
+-                <?php
+-                include('make_tbl.php');
+-                include('mitglieder_array.php');
+-                if(isset($mitglieder))
+-                    echo make_tbl($mitglieder);
+-                else
+-                    echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
+-                ?>
+-                </tbody>
+-            </table>
+-            <br>
+-            <h3>Bearbeiten/Erstellen</h3>
+-            <div class="form-group mb-3 mt-3">
+-                <label for="ba">Username:</label>
+-                <input class="form-control mt-3" placeholder="Username">
+-            </div>
+-            <div class="mb-3">
+-                <label for="exampleFormControlInput1" class="form-label">E-Mail-Adresse:</label>
+-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-Mail-Adresse eingeben">
+-            </div>
+-            <div class="mb-3">
+-                <label for="inputPassword" class="form-label">Passwort</label>
+-                <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
+-            </div>
+-            <div class="form-check">
+-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+-                <label class="form-check-label" for="flexCheckDefault">
+-                    Dem Projekt zugeordnet
+-                </label>
+-            </div>
+-            <br>
+-            <div class="mb-3">
+-                <button type="button" class="btn btn-primary">Speichern</button>
+-                <button type="button" class="btn btn-info">Reset</button>
+-            </div>
+-        </div>
+-        <div class="col-2">
+-        </div>
+-    </div>
+-</div>
+-<?php include('footer.php');?>
+Index: make_tbl.php
+===================================================================
+diff --git a/make_tbl.php b/make_tbl.php
+deleted file mode 100644
+--- a/make_tbl.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,27 +0,0 @@
+-<?php
+-function make_tbl($data){
+-    try{
+-        if (count($data) == 0)
+-            return "<td>keine Einträge vorhanden</td><td/><td/>";
+-        $tbl_array = [];                                                  # Array initialisieren
+-        foreach($data as $row){                                           # Erstellen der rows
+-            $tbl_array[] = "<tr>";
+-            foreach ($row as $cell){# Erstellen der Zellen
+-                if($cell==1){
+-                    $tbl_array[] ="<td><input class='form-check-input' type='checkbox' value='' id='flexCheckChecked' disabled='disabled' checked></td>";
+-                }
+-                else if ($cell==0){
+-                    $tbl_array[] ="<td><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' disabled='disabled'></td>";
+-                }
+-                else $tbl_array[] = "<td>$cell</td>";
+-            }
+-
+-            $tbl_array[] = "<td><a href=''><i class='fa-solid fa-pen-to-square'></i></a></td>
+-                            <td><a href=''><i class='fa-regular fa-trash-can'></i></a></td></tr>";
+-        }
+-        return implode('', $tbl_array);                           # Rückgabe des Table als String
+-    } catch(Exception $e) {
+-        echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
+-    }
+-}
+-?>
+\ No newline at end of file
+Index: reiter_array.php
+===================================================================
+diff --git a/reiter_array.php b/reiter_array.php
+deleted file mode 100644
+--- a/reiter_array.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,16 +0,0 @@
+-<?php
+-$reiter = array(
+-    array(
+-        'Name' => 'ToDo',
+-        'Beschreibung' => 'Dinge, die erledigt werden müssen.',
+-    ),
+-    array(
+-        'Name' => 'Erledigt',
+-        'Beschreibung' => 'Dinge, die erledigt sind.',
+-    ),
+-    array(
+-        'Name' => 'Verschoben',
+-        'Beschreibung' => 'Dinge, die später erledigt werden.',
+-    )
+-);
+-?>
+\ No newline at end of file
+Index: Menu.php
+===================================================================
+diff --git a/Menu.php b/Menu.php
+deleted file mode 100644
+--- a/Menu.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,25 +0,0 @@
+-<?php include('header.php');?>
+-<ul class="list-group">
+-    <li class="list-group-item">
+-        <a class="text-decoration-none" href="Login.php">Login</a>
+-    </li>
+-    <li class="list-group-item">
+-        <a class="text-decoration-none" href="Projekte.php">Projekte</a>
+-    </li>
+-    <li class="list-group-item">
+-        <a class="text-decoration-none" href="index.php">Aktuelles Projekt</a>
+-    </li>
+-    <li class="list-group-item ms-4">
+-        <a class="text-decoration-none" href="Reiter.php">Reiter</a>
+-    </li>
+-    <li class="list-group-item ms-4">
+-        <a class="text-decoration-none" href="Aufgaben.php">Aufgaben</a>
+-    </li>
+-    <li class="list-group-item ms-4">
+-        <a class="text-decoration-none" href="Mitglieder.php">Mitglieder</a>
+-    </li>
+-    <li class="list-group-item ms-4">
+-        <a class="text-decoration-none" href="databaseConnection.php">Datenbankinfos</a>
+-    </li>
+-</ul>
+-<?php include('footer.php');?>
+Index: aufgaben_array.php
+===================================================================
+diff --git a/aufgaben_array.php b/aufgaben_array.php
+deleted file mode 100644
+--- a/aufgaben_array.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,34 +0,0 @@
+-<?php
+-$aufgaben = array(
+-    array(
+-        'Aufgabenbezeichnung' => 'HTML Datei erstellen',
+-        'Beschreibung' => 'HTML Datei erstellen',
+-        'Reiter' => 'ToDo',
+-        'Zuständig' => 'Max Mustermann'
+-    ),
+-    array(
+-        'Aufgabenbezeichnung' => 'CSS Datei erstellen',
+-        'Beschreibung' => 'CSS Datei erstellen',
+-        'Reiter' => 'ToDo',
+-        'Zuständig' => 'Max Mustermann'
+-    ),
+-    array(
+-        'Aufgabenbezeichnung' => 'PC eingeschaltet',
+-        'Beschreibung' => 'PC eingeschalten',
+-        'Reiter' => 'Erledigt',
+-        'Zuständig' => 'Max Mustermann'
+-    ),
+-    array(
+-        'Aufgabenbezeichnung' => 'Kaffee trinken',
+-        'Beschreibung' => 'Kaffee trinken',
+-        'Reiter' => 'Erledigt',
+-        'Zuständig' => 'Petra Müller'
+-    ),
+-    array(
+-        'Aufgabenbezeichnung' => 'Für die Uni lernen',
+-        'Beschreibung' => 'Für die Uni lernen',
+-        'Reiter' => 'Verschoben',
+-        'Zuständig' => 'Max Mustermann'
+-    ),
+-);
+-?>
+\ No newline at end of file
+Index: Projekte.php
+===================================================================
+diff --git a/Projekte.php b/Projekte.php
+deleted file mode 100644
+--- a/Projekte.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,57 +0,0 @@
+-<?php include('header.php');?>
+-<body>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Projekte</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-            <?php include("menu.php");?>
+-        </div>
+-        <div class="col-8">
+-            <div>
+-                <header class="p-3"
+-                <h1 class="display-5" Projekt auswählen </h1>
+-                </header>
+-            </div>
+-            <div>
+-                <h3>Projekt auswählen:</h3>
+-                <select class="form-select mb-3" aria-label="Default select example">
+-                    <option selected>- bitte auswählen -</option>
+-                    <option value="1">Pizza</option>
+-                    <option value="2">Burger</option>
+-                    <option value="3">Döner</option>
+-                </select>
+-            </div>
+-            <div class="mb-3">
+-                <button type="button" class="btn btn-primary">Auswählen</button>
+-                <button type="button" class="btn btn-primary">Bearbeiten</button>
+-                <button type="button" class="btn btn-danger">Löschen</button>
+-            </div>
+-            <h3>Projekt bearbeiten/erstellen:</h3>
+-            <div class="form-group">
+-                <label for="pn">Projektname:</label>
+-                <input class="form-control" placeholder="Projekt">
+-            </div>
+-            <br>
+-            <div class="form-group">
+-                <label for="pb">Projektbeschreibung:</label>
+-                <textarea class="form-control" rows="5" placeholder="Beschreibung"></textarea>
+-            </div>
+-            <br>
+-            <div class="mb-3">
+-                <button type="button" class="btn btn-primary">Speichern</button>
+-                <button type="button" class="btn btn-info">Reset</button>
+-            </div>
+-        </div>
+-        <div class="col-2">
+-        </div>
+-    </div>
+-</div>
+-<?php include('footer.php');?>
+Index: header.php
+===================================================================
+diff --git a/header.php b/header.php
+deleted file mode 100644
+--- a/header.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,18 +0,0 @@
+-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//DE">
+-<html>
+-<head>
+-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+-
+-    <title>Aufgabenplaner</title>
+-
+-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.1/bootstrap-table.min.css"  rel="stylesheet">
+-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+-
+-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.1/bootstrap-table.min.js"></script>
+-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+-
+-</head>
+-<body>
+\ No newline at end of file
+Index: mitglieder_array.php
+===================================================================
+diff --git a/mitglieder_array.php b/mitglieder_array.php
+deleted file mode 100644
+--- a/mitglieder_array.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,14 +0,0 @@
+-<?php
+-$mitglieder = array(
+-    array(
+-        'Name' => 'Max Mustermann',
+-        'E-Mail' => 'mustermann@muster.de',
+-        'In Projekt' => True,
+-    ),
+-    array(
+-        'Name' => 'Petra Müller',
+-        'E-Mail' => 'petra@mueller.de',
+-        'In Projekt' => True,
+-    )
+-);
+-?>
+Index: Reiter.php
+===================================================================
+diff --git a/Reiter.php b/Reiter.php
+deleted file mode 100644
+--- a/Reiter.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,64 +0,0 @@
+-<?php include('header.php');?>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Reiter</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-            <?php include("menu.php");?>
+-        </div>
+-        <div class="col-8">
+-            <table class="table">
+-                <thead>
+-                <tr class="bg-light">
+-                    <th scope="col">Name</th>
+-                    <th scope="col">Beschreibung</th>
+-                    <th scope="col"></th>
+-                    <th scope="col"></th>
+-                </tr>
+-                </thead>
+-                <tbody>
+-                <?php
+-
+-                include('make_tbl.php');
+-
+-                include('reiter_array.php');
+-                if(isset($reiter))
+-                    echo make_tbl($reiter);
+-                else
+-                    echo "<td>Fehler beim Suchen der Einträge</td><td/><td/>";
+-                ?>
+-                </tbody>
+-            </table>
+-            <br>
+-            <br>
+-            <br>
+-            <br>
+-            <br>
+-            <h3>Bearbeiten/Erstellen</h3>
+-            <div class="form-group mt-3">
+-                <label for="br">Bezeichnung des Reiters:</label>
+-                <input class="form-control mt-3" placeholder="Reiter">
+-            </div>
+-            <br>
+-            <div class="form-group">
+-                <label for="b">Beschreibung:</label>
+-                <textarea class="form-control mt-3" rows="5" placeholder="Beschreibung"></textarea>
+-            </div>
+-            <br>
+-            <div class="mb-3">
+-                <button type="button" class="btn btn-primary">Speichern</button>
+-                <button type="button" class="btn btn-info">Reset</button>
+-            </div>
+-        </div>
+-        <div class="col-2">
+-        </div>
+-    </div>
+-</div>
+-<?php include('footer.php');?>
+\ No newline at end of file
+Index: Login.php
+===================================================================
+diff --git a/Login.php b/Login.php
+deleted file mode 100644
+--- a/Login.php	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ /dev/null	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
+@@ -1,49 +0,0 @@
+-<?php include('header.php');?>
+-<div class="container-fluid">
+-    <header class="bg-light mb-3 mt-4 p-5">
+-        <div class="row">
+-            <div class="col-2">
+-            </div>
+-            <div class="col-10">
+-                <h1 class="display-5">Aufgabenplaner: Login</h1>
+-            </div>
+-        </div>
+-    </header>
+-    <div class="row mt-4">
+-        <div class="col-2">
+-        </div>
+-        <div class="col-8">
+-
+-            <div class="mb-3">
+-                <label for="exampleFormControlInput1" class="form-label">Email-Adresse</label>
+-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email Adresse eingeben">
+-            </div>
+-            <div class="mb-3">
+-                <label for="inputPassword" class="form-label">Passwort</label>
+-                <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
+-            </div>
+-            <div class="form-check">
+-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+-                <label class="form-check-label" for="flexCheckDefault">
+-                    AGBs und Datenschutzbedingung akzeptieren
+-                </label>
+-            </div>
+-            <button type="button" class="btn btn-primary mt-3">Einloggen</button>
+-            <div>
+-                <?php echo "Noch nicht registriert? "; ?>
+-                <a class="text-decoration-none" href="registrierung.php">Registrierung</a>
+-            </div>
+-            <div>
+-                <br>
+-                <?php echo "Da der Login Vorgang technisch noch nicht realisiert wurde:"; ?>
+-                <a class="text-decoration-none" href="index.php">Überspringen</a>
+-            </div>
+-
+-
+-        </div>
+-
+-    </div>
+-    <div class="col-2">
+-    </div>
+-</div>
+-<?php include('footer.php');?>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bd1436ea-2113-462c-a8be-760729699a3a\" name=\"Changes\" comment=\"Login erstellt, Projekte angefangen\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/codeigniter/app/Controllers/Registrierung.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/header.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/deployment.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/deployment.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2022_20_41__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2022_20_41__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/webServers.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/webServers.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Aufgaben.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Aufgaben.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Login.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Login.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Menu.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Menu.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Mitglieder.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Mitglieder.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Projekte.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Projekte.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Reiter.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Reiter.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/databaseConnection.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/databaseConnection.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/index.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/index.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/make_tbl.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/make_tbl.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HiS3f5VYDxKbdZff4PtbHBqLne\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sebastian Ohs/Documents/GitHub/WebEntwicklung&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Sebastian Ohs\\Documents\\GitHub\\WebEntwicklung\\codeigniter\\app\\Views\\templates\" />\r\n      <recent name=\"C:\\Users\\Sebastian Ohs\\Documents\\GitHub\\WebEntwicklung\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"menu.php\" type=\"PhpLocalRunConfigurationType\" factoryName=\"PHP Console\" temporary=\"true\" path=\"$PROJECT_DIR$/menu.php\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"PHP Script.menu.php\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bd1436ea-2113-462c-a8be-760729699a3a\" name=\"Changes\" comment=\"\" />\r\n      <created>1668766212632</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1668766212632</updated>\r\n      <workItem from=\"1668766213886\" duration=\"238000\" />\r\n      <workItem from=\"1668766454890\" duration=\"1261000\" />\r\n      <workItem from=\"1669041687668\" duration=\"36000\" />\r\n      <workItem from=\"1669041788457\" duration=\"2329000\" />\r\n      <workItem from=\"1670054683535\" duration=\"9859000\" />\r\n      <workItem from=\"1670929385121\" duration=\"2068000\" />\r\n      <workItem from=\"1670935427622\" duration=\"3608000\" />\r\n      <workItem from=\"1672308721648\" duration=\"10061000\" />\r\n      <workItem from=\"1672681267099\" duration=\"5141000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"change 1\">\r\n      <created>1668767385623</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668767385623</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"change 2\">\r\n      <created>1668767646242</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668767646242</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"change 3\">\r\n      <created>1668768253091</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668768253091</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"change 4 im header\">\r\n      <created>1669042043803</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669042043803</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"change 5 im header\">\r\n      <created>1669042281083</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669042281083</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Auslagerung Reiter\">\r\n      <created>1670057581570</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670057581570</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"list group flush\">\r\n      <created>1670057794740</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670057794740</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Speichern der Arrays\">\r\n      <created>1670061670154</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670061670154</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"change 1\" />\r\n    <MESSAGE value=\"change 2\" />\r\n    <MESSAGE value=\"change 3\" />\r\n    <MESSAGE value=\"change 4 im header\" />\r\n    <MESSAGE value=\"change 5 im header\" />\r\n    <MESSAGE value=\"Auslagerung Reiter\" />\r\n    <MESSAGE value=\"list group flush\" />\r\n    <MESSAGE value=\"Speichern der Arrays\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Speichern der Arrays\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dd3aebb3e461e1af4a146fc38d00dda823a2109d)
++++ b/.idea/workspace.xml	(date 1674312059996)
+@@ -1,23 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="Login erstellt, Projekte angefangen">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Registrierung.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2022_20_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2022_20_41__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
++    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="zweiter Versuch CodeIgniter">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/Aufgaben.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Mitglieder.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Projekte.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Reiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/Reiter.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/databaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/databaseConnection.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/make_tbl.php" beforeDir="false" afterPath="$PROJECT_DIR$/make_tbl.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -62,6 +47,9 @@
+     </key>
+   </component>
+   <component name="RunManager">
++    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
++      <method v="2" />
++    </configuration>
+     <configuration name="menu.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/menu.php">
+       <method v="2" />
+     </configuration>

@@ -1,0 +1,124 @@
+Index: codeigniter/app/Views/pages/aufgaben.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/codeigniter/app/Views/pages/aufgaben.php b/codeigniter/app/Views/pages/aufgaben.php
+new file mode 100644
+--- /dev/null	(date 1674312135726)
++++ b/codeigniter/app/Views/pages/aufgaben.php	(date 1674312135726)
+@@ -0,0 +1,114 @@
++
++<div class="container-fluid">
++    <header class="bg-light mb-3 mt-4 p-5">
++        <div class="row">
++            <div class="col-2">
++            </div>
++            <div class="col-10">
++                <h1 class="display-5">Aufgabenplaner: Aufgaben</h1>
++            </div>
++        </div>
++    </header>
++    <div class="row mt-4">
++        <div class="col-2">
++            <?php include("menu.php");?>
++        </div>
++        <div class="col-8">
++            <table class="table table-responsive table-hover d-md-table"
++                   data-show-columns="true"
++                   data-show-toggle="true"
++                   data-sort-stable="true">
++                <thead>
++                <tr class="bg-light">
++                    <th scope="col">Aufgabenbezeichnung:</th>
++                    <th scope="col">Beschreibung der Aufgabe:</th>
++                    <th scope="col">Reiter:</th>
++                    <th scope="col">Zuständig:</th>
++                    <th scope="col"></th>
++                </tr>
++                </thead>
++                <tbody>
++                <? foreach( $aufgaben as $item ): ?>
++                    <tr>
++                        <td><?= $item['name'] ?></td>
++                        <td><?= $item['beschreibung'] ?></td>
++
++                        <td><? $result = '';
++                            foreach ($reiter as $r): {
++                                if ($item['reiterid']==$r['id'])
++                                    $result = $r['name'];
++                            }
++                            endforeach;
++                            echo $result;
++                            ?></td>
++                        <td><? $result = '';
++                            foreach ($mitglieder as $id): {
++                                if ($item['erstellerid']==$id['id'])
++                                    $result = $id['username'];
++                            }
++                            endforeach;
++                            echo $result;
++                            ?></td>
++                        <td>
++                            <div class="btn-group">
++                                <a href="">
++                                    <button type='button' name='btnBearbeiten' id='btnBearbeiten' class='btn'><i style="color: Dodgerblue;" class="fas fa-edit"></i></button>
++                                </a>
++                                <a href="">
++                                    <button type='submit' name='btnLoeschen' id='btnLoeschen' class='btn'><i style="color: Dodgerblue;" class="fas fa-trash"></i></button>
++                                </a>
++                            </div>
++                        </td>
++                    </tr>
++                <? endforeach; ?>
++                </tbody>
++            </table>
++            <br>
++            <br>
++            <br>
++            <h3>Bearbeiten/Erstellen</h3>
++            <div class="form-group mt-3">
++                <label for="ba">Bezeichnung der Aufgabe:</label>
++                <input class="form-control mt-3" placeholder="Aufgabe">
++            </div>
++            <br>
++            <div class="form-group">
++                <label for="b">Beschreibung:</label>
++                <textarea class="form-control mt-3" rows="5" placeholder="Beschreibung"></textarea>
++            </div>
++            <div class="form-group mt-2">
++                <label for="ba">Erstelldatum:</label>
++                <input class="form-control mt-3" placeholder="01.01.23">
++            </div>
++            <div class="form-group mt-2">
++                <label for="ba">Fällig bis:</label>
++                <input class="form-control mt-3" placeholder="01.01.23">
++            </div>
++            <div class="mt-3">
++            Zugehöriger Reiter:
++                <select class="form-select mt-2" aria-label="Default select example">
++                    <option selected>- ToDo -</option>
++                    <option value="1">ToDo</option>
++                    <option value="2">Erledigt</option>
++                    <option value="3">Verschoben</option>
++                </select>
++            </div>
++            <div class="mt-3">
++                Zuständig:
++                <select class="form-select mt-2" aria-label="Default select example">
++                    <option selected>- Max Mustermann -</option>
++                    <option value="1">Max Mustermann</option>
++                    <option value="2">Petra Müller</option>
++                </select>
++            </div>
++            <br>
++            <div class="mb-3">
++                <button type="button" class="btn btn-primary">Speichern</button>
++                <button type="button" class="btn btn-info">Reset</button>
++            </div>
++        </div>
++        <div class="col-2">
++        </div>
++    </div>
++</div>
++
