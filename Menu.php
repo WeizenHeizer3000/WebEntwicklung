@@ -18,5 +18,8 @@
     <li class="list-group-item ms-4">
         <a class="text-decoration-none" href="Mitglieder.php">Mitglieder</a>
     </li>
+    <li class="list-group-item ms-4">
+        <a class="text-decoration-none" href="databaseConnection.php">Datenbankinfos</a>
+    </li>
 </ul>
 <?php include('footer.php');?>
