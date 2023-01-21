@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="Updated Database.php">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Config/Database.php" afterDir="false" />
-    </list>
+    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="Updated Database.php" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,7 +192,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674314117558</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated Database.php">
+      <created>1674314258196</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674314258196</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Updated Database.php">
+      <created>1674314519304</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1674314519305</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
