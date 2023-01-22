@@ -41,4 +41,12 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+
+    public $personbearbeiten = [
+        'email' => 'required',
+        'passwort' => 'required'];
+
+    public $personbearbeiten_errors = [
+        'email' => ['required' => 'Bitte tragen Sie eine E-Mail ein.'],
+        'passwort' => ['required' => 'Bitte tragen Sie ein gültiges Passwort ein.']];
 }

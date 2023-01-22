@@ -15,11 +15,11 @@
             <?= form_open('login/index', array('role' => 'form'))?>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email-Adresse</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email Adresse eingeben" name="email">
+                <input type="email" class="form-control" <?=(isset($error['email']))?'is-invalid':'' ?> id="exampleFormControlInput1" placeholder="Email Adresse eingeben" name="email">
             </div>
             <div class="mb-3">
                 <label for="inputPassword" class="form-label">Passwort</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Passwort" name="passwort">
+                <input type="password" class="form-control" <?=(isset($error['passwort']))?'is-invalid':'' ?> id="inputPassword" placeholder="Passwort" name="passwort">
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
