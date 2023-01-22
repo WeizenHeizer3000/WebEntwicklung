@@ -15,10 +15,10 @@ class Login extends BaseController
 
     public function index()
     {
-        if ($this->validation->run($_POST, 'personbearbeiten')) {
-            // Anlegen oder ändern
-            if (isset($_POST['email']) && isset($_POST['passwort'])) {
+        // Anlegen oder ändern
+        if (isset($_POST['email']) && isset($_POST['passwort']) && isset($_POST['AGBs'])) {
 
+            if ($this->validation->run($_POST, 'loginueberpruefen')) {
                 if ($this->MitgliederModel->login() != NUll) {
                     $passwort = password_hash($this->MitgliederModel->login()['passwort'], PASSWORD_DEFAULT);
 
@@ -33,24 +33,28 @@ class Login extends BaseController
                             $this->session->set('projektId', -1);
                         }
                         return redirect()->to(base_url() . '/index');
+                    }else{
+                        $data['login'] = $_POST;
+                        $data['falsePassword'] = 1;
+                        // Fehlermeldungen generieren
+                        $data['error'] = $this->validation->getErrors();
+                        echo view('templates/header');
+                        echo view( 'pages/login', $data);
+                        echo view('templates/footer');
                     }
                 }
+            }else {
+                // Daten zurück ans Formular übergeben
+                $data['login'] = $_POST;
+                // Fehlermeldungen generieren
+                $data['error'] = $this->validation->getErrors();
+                echo view('templates/header');
+                echo view( 'pages/login', $data);
+                echo view('templates/footer');
             }
+        }else{
             echo view('templates/header');
-            echo view('pages/login');
-            echo view('templates/footer');
-        } else {
-            // Daten zurück ans Formular übergeben
-            $data['personen'] = $_POST;
-            // Fehlermeldungen generieren
-            $data['error'] = $this->validation->getErrors();
-
-            echo('<pre>');
-            var_dump($data);
-            echo('</pre>');
-            die();
-            echo view('templates/header');
-            echo view( 'pages/login', $data);
+            echo view( 'pages/login');
             echo view('templates/footer');
         }
     }

@@ -42,20 +42,29 @@ class Mitglieder extends BaseController
         }
         if(isset($_POST['btnSpeichern'] )) {
             // Daten speichern
-            if(isset($_POST['passwort']) && $_POST['passwort'] != ''){
-                if(isset($_POST['id']) && $_POST['id'] != '') {
-                    $this->MitgliederModel->updateMitglied();
+            $data['todo'] = 1;
+            if ($this->validation->run($_POST, 'mitgliederbearbeiten')) {
+
+                if(isset($_POST['passwort']) && $_POST['passwort'] != ''){
+                    if(isset($_POST['id']) && $_POST['id'] != '') {
+                        $this->MitgliederModel->updateMitglied();
+                    }
+                    else {
+                        $this->MitgliederModel->createMitglied();
+                    }
+                    return redirect()->to(base_url('Mitglieder/index_edit'));
                 }
-                else {
-                    $this->MitgliederModel->createMitglied();
-                }
-                return redirect()->to(base_url('Mitglieder/index_edit'));
+
+            }else {
+                // Daten zurück ans Formular übergeben
+                $data['mitglieder'] = $_POST;
+                // Fehlermeldungen generieren
+                $data['error'] = $this->validation->getErrors();
+                echo view('templates/header');
+                echo view( 'pages/mitgliederEdit', $data);
+                echo view('templates/footer');
             }
-            else{
-                echo view( 'templates/header');
-                echo view('pages/fehler');
-                echo view( 'templates/footer');
-            }
+
         }
         // Person löschen
         elseif (isset($_POST['btnLoeschen'])) {

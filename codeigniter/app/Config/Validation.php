@@ -42,11 +42,38 @@ class Validation extends BaseConfig
     // Rules
     // --------------------------------------------------------------------
 
-    public $personbearbeiten = [
-        'email' => 'required',
-        'passwort' => 'required'];
+    public $loginueberpruefen = [
+        'email' => 'required|valid_email',
+        'passwort' => 'required',
+        'AGBs' => 'required'];
 
-    public $personbearbeiten_errors = [
-        'email' => ['required' => 'Bitte tragen Sie eine E-Mail ein.'],
-        'passwort' => ['required' => 'Bitte tragen Sie ein gültiges Passwort ein.']];
+    public $loginueberpruefen_errors = [
+        'email' => ['required' => 'Bitte tragen Sie eine E-Mail ein.',
+            'valid_email' => 'Ihre E-Mail ist ungültig.'],
+        'passwort' => ['required' => 'Bitte tragen Sie ein gültiges Passwort ein.'],
+        'AGBs' => ['required' => 'Sie müssen den AGBs zustimmen!']
+    ];
+
+    public $reiterbearbeiten = [
+        'name' => 'required',
+        'beschreibung' => 'required'
+    ];
+
+    public $reiterbearbeiten_errors = [
+        'name' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
+        'beschreibung' => ['required' => 'Bitte tragen Sie eine Beschreibung ein.']
+    ];
+
+    public $mitgliederbearbeiten = [
+        'username' => 'required',
+        'email' => 'required|valid_email',
+        'passwort' => 'required'
+        ];
+
+    public $mitgliederbearbeiten_errors = [
+        'username' => ['required' => 'Bitte tragen Sie einen Usernamen ein.'],
+        'email' => ['required' => 'Bitte tragen Sie eine E-mail ein.',
+            'valid_email' => 'Ihre E-Mail ist ungültig.'],
+        'passwort' => ['required' => 'Bitte tragen Sie ein Passwort ein.']
+    ];
 }
