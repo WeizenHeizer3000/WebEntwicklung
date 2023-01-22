@@ -34,8 +34,7 @@ class Login extends BaseController
                         }
                         return redirect()->to(base_url() . '/index');
                     }else{
-                        $data['login'] = $_POST;
-                        $data['falsePassword'] = 1;
+
                         // Fehlermeldungen generieren
                         $data['error'] = $this->validation->getErrors();
                         echo view('templates/header');
