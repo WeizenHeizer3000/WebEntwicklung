@@ -44,6 +44,11 @@ class Login extends BaseController
             $data['personen'] = $_POST;
             // Fehlermeldungen generieren
             $data['error'] = $this->validation->getErrors();
+
+            echo('<pre>');
+            var_dump($data);
+            echo('</pre>');
+            die();
             echo view('templates/header');
             echo view( 'pages/login', $data);
             echo view('templates/footer');

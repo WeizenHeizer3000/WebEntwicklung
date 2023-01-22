@@ -13,6 +13,9 @@
         </div>
         <div class="col-8">
             <?= form_open('login/index', array('role' => 'form'))?>
+
+
+
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email-Adresse</label>
                 <input type="email" class="form-control" <?=(isset($error['email']))?'is-invalid':'' ?> id="exampleFormControlInput1" placeholder="Email Adresse eingeben" name="email">
