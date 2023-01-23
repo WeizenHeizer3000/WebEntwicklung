@@ -23,6 +23,9 @@ class Projekte extends BaseController
         $id=$_POST['id'];
         if(isset($_POST['btnLoeschen'])){
             $this->ProjekteModel->deleteProjekt();
+            if($id==session()->get('aktuellesProjekt')){
+                $this->session->set('aktuellesProjekt', null);
+            }
             return redirect()->to(base_url('projekte/index_edit/'));
         }
         if(isset($_POST['btnBearbeiten'])){
