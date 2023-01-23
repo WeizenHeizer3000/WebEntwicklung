@@ -36,7 +36,7 @@ class Mitglieder extends BaseController
     }
 
     public function submit_edit() {
-        // Person ändern
+
         if(isset($_POST['btnReset'] )) {
             return redirect()->to(base_url('Mitglieder/index_edit'));
         }
@@ -66,7 +66,7 @@ class Mitglieder extends BaseController
             }
 
         }
-        // Person löschen
+        // Mitglied löschen
         elseif (isset($_POST['btnLoeschen'])) {
             $this->MitgliederModel->deleteMitglied();
             return redirect()->to(base_url('mitglieder/index_edit/'));

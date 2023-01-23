@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="changes">
+      <change afterPath="$PROJECT_DIR$/codeigniter/app/Models/ProjekteModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Config/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Config/Validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Projekte.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/projekte.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/codeigniter/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -86,6 +89,7 @@
       <workItem from="1672680146861" duration="8427000" />
       <workItem from="1673194353269" duration="12775000" />
       <workItem from="1673277571648" duration="32951000" />
+      <workItem from="1674478686398" duration="6478000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
@@ -234,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674394565790</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="changes">
+      <created>1674404580400</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674404580400</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changes">
+      <created>1674404768040</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674404768040</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

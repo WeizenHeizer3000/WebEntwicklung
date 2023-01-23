@@ -16,7 +16,8 @@ class Login extends BaseController
     public function index()
     {
         // Anlegen oder ändern
-        if (isset($_POST['email']) && isset($_POST['passwort']) && isset($_POST['AGBs'])) {
+
+        if (isset($_POST['email']) && isset($_POST['passwort'])) {
 
             if ($this->validation->run($_POST, 'loginueberpruefen')) {
                 if ($this->MitgliederModel->login() != NUll) {
@@ -34,8 +35,8 @@ class Login extends BaseController
                         }
                         return redirect()->to(base_url() . '/index');
                     }else{
-
-                        // Fehlermeldungen generieren
+                        $data['login'] = 1;
+                        // Fehlermeldungen generieren für falsches Passwort
                         $data['error'] = $this->validation->getErrors();
                         echo view('templates/header');
                         echo view( 'pages/login', $data);
@@ -52,8 +53,12 @@ class Login extends BaseController
                 echo view('templates/footer');
             }
         }else{
+            // Daten zurück ans Formular übergeben
+            $data['login'] = $_POST;
+            // Fehlermeldungen generieren
+            $data['error'] = $this->validation->getErrors();
             echo view('templates/header');
-            echo view( 'pages/login');
+            echo view( 'pages/login', $data);
             echo view('templates/footer');
         }
     }

@@ -1,4 +1,3 @@
-
 <body>
 <div class="container-fluid">
     <header class="bg-light mb-3 mt-4 p-5">
@@ -22,32 +21,41 @@
             </div>
             <div>
                 <h3>Projekt auswählen:</h3>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>- bitte auswählen -</option>
-                    <option value="1">Pizza</option>
-                    <option value="2">Burger</option>
-                    <option value="3">Döner</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <button type="button" class="btn btn-primary">Auswählen</button>
-                <button type="button" class="btn btn-primary">Bearbeiten</button>
-                <button type="button" class="btn btn-danger">Löschen</button>
-            </div>
-            <h3>Projekt bearbeiten/erstellen:</h3>
-            <div class="form-group">
-                <label for="pn">Projektname:</label>
-                <input class="form-control" placeholder="Projekt">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="pb">Projektbeschreibung:</label>
-                <textarea class="form-control" rows="5" placeholder="Beschreibung"></textarea>
-            </div>
-            <br>
-            <div class="mb-3">
-                <button type="button" class="btn btn-primary">Speichern</button>
-                <button type="button" class="btn btn-info">Reset</button>
+                <div class="form-group">
+                    <form action="ced_edit" method="post">
+                    <select class="form-select mb-3" aria-label="Default select example">
+                        <option selected>- bitte auswählen -</option>
+                        <? foreach( $projekte as $item ): ?>
+                            <option ><?= $item['name'] ?></option>
+                        <? endforeach; ?>
+                    </select>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary">Auswählen</button>
+                        <button id="btnBearbeiten" type="submit" name="btnBearbeiten" class="btn btn-primary">Bearbeiten</button>
+                        <button type="button" class="btn btn-danger">Löschen</button>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="form-group">
+                    <form action="submit_edit" method="post">
+                    <h3>Projekt bearbeiten/erstellen:</h3>
+                    <div class="form-group">
+                        <label for="pn">Projektname:</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Projekt">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="pb">Projektbeschreibung:</label>
+                        <textarea type="text" id="beschreibung" name="beschreibung" class="form-control" rows="5" placeholder="Beschreibung"></textarea>
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <button id="btnSpeichern" type="submit" name="btnSpeichern" class="btn btn-primary">Speichern</button>
+                        <button id="btnReset" type="submit" name="btnReset" class="btn btn-info">Reset</button>
+                    </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="col-2">

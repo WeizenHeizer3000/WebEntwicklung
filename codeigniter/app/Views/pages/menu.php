@@ -4,7 +4,7 @@
         <a class="text-decoration-none" href="<?php echo site_url('Login/index')?>">Login</a>
     </li>
     <li class="list-group-item">
-        <a class="text-decoration-none" href="<?php echo site_url('Projekte/index')?>">Projekte</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Projekte/index_edit')?>">Projekte</a>
     </li>
     <li class="list-group-item">
         <a class="text-decoration-none" href="<?php echo site_url('Index/index')?>">Aktuelles Projekt</a>

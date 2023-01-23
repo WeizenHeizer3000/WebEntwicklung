@@ -28,14 +28,16 @@
                 <div class="invalid-feedback">
                     <?= (isset($error['passwort']))?$error['passwort']:''?>
                 </div>
+                <label <? if($login != 1) : ?>style="visibility: hidden"<? endif ?> class="text-danger">E-Mail und Passwort stimmen nicht überein!</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input <?=(isset($error['AGBs']))?'is-invalid':'' ?>" value="" id="AGBs" name="AGBs">
+                <input type="checkbox" class="form-check-input <?=(isset($error['agbs']))?'is-invalid':'' ?>" id="agbs" name="agbs"
+                       value="<?=isset($login['agbs']) ? $login['agbs'] : true ?>">
                 <label class="form-check-label" for="flexCheckDefault">
                     AGBs und Datenschutzbedingung akzeptieren
                 </label>
                 <div class="invalid-feedback">
-                    <?= (isset($error['AGBs']))?$error['AGBs']:''?>
+                    <?= (isset($error['agbs']))?$error['agbs']:''?>
                 </div>
             </div>
             <button id="btnsubmit" type="submit" class="btn btn-primary mt-3">Einloggen</button>
