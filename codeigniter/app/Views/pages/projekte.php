@@ -23,16 +23,17 @@
                 <h3>Projekt auswählen:</h3>
                 <div class="form-group">
                     <form action="ced_edit" method="post">
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3" aria-label="Default select example" name="id">
                         <option selected>- bitte auswählen -</option>
                         <? foreach( $projekte as $item ): ?>
-                            <option ><?= $item['name'] ?></option>
+                            <option value="<?= $item['id'] ?>"> <?= $item['name'] ?> </option>
                         <? endforeach; ?>
                     </select>
+
                     <div class="mb-3">
-                        <button type="button" class="btn btn-primary">Auswählen</button>
+                        <button id="btnAuswählen" type="submit" name="btnAuswaehlen" class="btn btn-primary">Auswählen</button>
                         <button id="btnBearbeiten" type="submit" name="btnBearbeiten" class="btn btn-primary">Bearbeiten</button>
-                        <button type="button" class="btn btn-danger">Löschen</button>
+                        <button id="btnLoeschen" type="submit" name="btnLoeschen" class="btn btn-danger">Löschen</button>
                     </div>
                     </form>
                 </div>
@@ -42,12 +43,13 @@
                     <h3>Projekt bearbeiten/erstellen:</h3>
                     <div class="form-group">
                         <label for="pn">Projektname:</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Projekt">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Projekt"
+                               value="<?=isset($projektBearbeiten['name']) ? $projektBearbeiten['name'] : '' ?>">
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="pb">Projektbeschreibung:</label>
-                        <textarea type="text" id="beschreibung" name="beschreibung" class="form-control" rows="5" placeholder="Beschreibung"></textarea>
+                        <textarea type="text" id="beschreibung" name="beschreibung" class="form-control" rows="5" placeholder="Beschreibung"><?=isset($projektBearbeiten['beschreibung']) ? $projektBearbeiten['beschreibung'] : '' ?></textarea>
                     </div>
                     <br>
                     <div class="mb-3">

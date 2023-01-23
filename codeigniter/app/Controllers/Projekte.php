@@ -19,24 +19,25 @@ class Projekte extends BaseController
     }
 
     public function ced_edit($id = 0, $todo = 0) {
-        echo('<pre>');
-        var_dump($_POST);
-        echo('</pre>');
-        die();
-
         // Todo: 0 = create, 1 = Bearbeiten, 2 = löschen
-        $data['todo'] = $todo;
-        // Person bearbeiten oder löschen
-        if($id > 0 && ($todo == 1 || $todo == 2 ))
-            $data['projekte'] = $this->ProjekteModel->getProjekte($id);
-        echo('<pre>');
-        var_dump($id);
-        echo('</pre>');
-        die();
-        echo view( 'templates/header');
-        echo view( 'pages/projekte', $data);
-        echo view( 'templates/footer');
-
+        $id=$_POST['id'];
+        if(isset($_POST['btnLoeschen'])){
+            $this->ProjekteModel->deleteProjekt();
+            return redirect()->to(base_url('projekte/index_edit/'));
+        }
+        if(isset($_POST['btnBearbeiten'])){
+            // Projekt bearbeiten oder löschen
+            if($id > 0 && ($todo == 1 || $todo == 2 ))
+                $data['projekte'] = $this->ProjekteModel->getProjekte();
+            $data['projektBearbeiten'] = $this->ProjekteModel->getProjekte($id);
+            echo view( 'templates/header');
+            echo view( 'pages/projekte', $data);
+            echo view( 'templates/footer');
+        }
+        if(isset($_POST['btnAuswaehlen'])){
+            $this->session->set('aktuellesProjekt', $id);
+            return redirect()->to(base_url('projekte/index_edit/'));
+        }
     }
 
     public function submit_edit() {
@@ -67,11 +68,6 @@ class Projekte extends BaseController
                 echo view( 'pages/projekte', $data);
                 echo view('templates/footer');
             }
-        }
-        // Projekt löschen
-        elseif (isset($_POST['btnLoeschen'])) {
-            $this->ProjekteModel->deleteProjekt();
-            return redirect()->to(base_url('mitglieder/index_edit/'));
         }
     }
 }
