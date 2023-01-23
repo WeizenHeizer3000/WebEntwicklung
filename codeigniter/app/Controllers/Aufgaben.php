@@ -2,9 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\AufgabenModel;
-use App\Models\ReiterModel;
-use App\Models\MitgliederModel;
+use App\Models;
 
 class Aufgaben extends BaseController
 {
@@ -19,6 +17,7 @@ class Aufgaben extends BaseController
         $data['aufgaben'] = $this->AufgabenModel->getAufgaben();
         $data['reiter'] = $this->ReiterModel->getReiter();
         $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
+        $data['zuständige'] = $this->Mitglieder_aufgabenModel->getMitglieder_aufgaben();
 
         echo view('templates/header');
         echo view('pages/aufgaben', $data);
