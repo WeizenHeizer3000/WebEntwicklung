@@ -11,7 +11,7 @@ class ReiterModel extends Model {
         IF ($reiter_id != NULL)
             $this->aufgabenplaner->where('reiter.id', $reiter_id);
 
-        $this->aufgabenplaner->orderBy('name');
+        $this->aufgabenplaner->orderBy('id');
         $result = $this->aufgabenplaner->get();
 
         if ($reiter_id != NULL)

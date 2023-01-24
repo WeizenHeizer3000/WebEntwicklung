@@ -15,7 +15,8 @@ class MitgliederModel extends Model {
 
     public function getMitglieder($mitglieder_id = NULL) {
         $this->aufgabenplaner = $this->db->table('mitglieder');
-        $this->aufgabenplaner->select('*');
+        $this->aufgabenplaner->select('mitglieder.*, mitglieder_projekte.*');
+        $this->aufgabenplaner->join('mitglieder_projekte', 'mitglieder_projekte.mitgliederid = mitglieder.id', 'left');
 
         IF ($mitglieder_id != NULL)
             $this->aufgabenplaner->where('mitglieder.id', $mitglieder_id);

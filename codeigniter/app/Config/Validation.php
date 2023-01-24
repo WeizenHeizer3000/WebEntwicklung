@@ -79,11 +79,26 @@ class Validation extends BaseConfig
 
     public $projektebearbeiten = [
         'name' => 'required',
-        'beschreibung' => 'required',
+        'beschreibung' => 'required'
     ];
 
     public $projektebearbeiten_errors = [
         'name' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
         'beschreibung' => ['required' => 'Bitte tragen Sie eine Beschreibung ein.']
+    ];
+
+    public $aufgabenbearbeiten = [
+        'name' => 'required',
+        'beschreibung' => 'required',
+        'erstellungsdatum' => 'required',
+        'faelligkeitsdatum' => 'required'
+    ];
+
+    public $aufgabenbearbeiten_errors = [
+        'name' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
+        'beschreibung' => ['required' => 'Bitte tragen Sie eine Beschreibung ein.'],
+        'erstellungsdatum' => ['required' => 'Bitte tragen Sie ein gültiges Datum ein.'],
+        'faelligkeitsdatum' => ['required' => 'Bitte tragen Sie ein gültiges Datum ein.']
+
     ];
 }

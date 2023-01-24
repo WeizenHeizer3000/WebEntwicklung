@@ -16,7 +16,6 @@ class Login extends BaseController
     public function index()
     {
         // Anlegen oder ändern
-
         if (isset($_POST['email']) && isset($_POST['passwort'])) {
 
             if ($this->validation->run($_POST, 'loginueberpruefen')) {
@@ -48,6 +47,7 @@ class Login extends BaseController
                 $data['login'] = $_POST;
                 // Fehlermeldungen generieren
                 $data['error'] = $this->validation->getErrors();
+
                 echo view('templates/header');
                 echo view( 'pages/login', $data);
                 echo view('templates/footer');

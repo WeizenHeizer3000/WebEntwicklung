@@ -30,8 +30,7 @@ class Projekte extends BaseController
         }
         if(isset($_POST['btnBearbeiten'])){
             // Projekt bearbeiten oder löschen
-            if($id > 0 && ($todo == 1 || $todo == 2 ))
-                $data['projekte'] = $this->ProjekteModel->getProjekte();
+            $data['projekte'] = $this->ProjekteModel->getProjekte();
             $data['projektBearbeiten'] = $this->ProjekteModel->getProjekte($id);
             echo view( 'templates/header');
             echo view( 'pages/projekte', $data);
@@ -48,28 +47,32 @@ class Projekte extends BaseController
             return redirect()->to(base_url('Projekte/index_edit'));
         }
         if(isset($_POST['btnSpeichern'] )) {
-            // Daten speichern
-            $data['todo'] = 1;
-            if ($this->validation->run($_POST, 'projektebearbeiten')) {
 
-                if(isset($_POST['name']) && $_POST['name'] != ''){
-                    if(isset($_POST['id']) && $_POST['id'] != '') {
-                        $this->ProjekteModel->updateProjekt();
+            if ($_POST['name']!="" && $_POST['beschreibung']!="") {
+                // Daten speichern
+                $data['todo'] = 1;
+                if ($this->validation->run($_POST, 'projektebearbeiten')) {
+                    if(isset($_POST['name']) && $_POST['name'] != ''){
+                        if(isset($_POST['id']) && $_POST['id'] != '') {
+                            $this->ProjekteModel->updateProjekt();
+                        }
+                        else {
+                            $this->ProjekteModel->createProjekt();
+                        }
+                        return redirect()->to(base_url('Projekte/index_edit'));
                     }
-                    else {
-                        $this->ProjekteModel->createProjekt();
-                    }
-                    return redirect()->to(base_url('Projekte/index_edit'));
+
+                }else {
+                    // Daten zurück ans Formular übergeben
+                    $data['projekte'] = $_POST;
+                    // Fehlermeldungen generieren
+                    $data['error'] = $this->validation->getErrors();
+                    echo view('templates/header');
+                    echo view( 'pages/projekte', $data);
+                    echo view('templates/footer');
                 }
-
-            }else {
-                // Daten zurück ans Formular übergeben
-                $data['projekte'] = $_POST;
-                // Fehlermeldungen generieren
-                $data['error'] = $this->validation->getErrors();
-                echo view('templates/header');
-                echo view( 'pages/projekte', $data);
-                echo view('templates/footer');
+            }else{
+                return redirect()->to(base_url('Projekte/index_edit'));
             }
         }
     }

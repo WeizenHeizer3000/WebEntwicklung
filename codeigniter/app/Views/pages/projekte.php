@@ -24,9 +24,9 @@
                 <div class="form-group">
                     <form action="ced_edit" method="post">
                     <select class="form-select mb-3" aria-label="Default select example" name="id">
-                        <option selected>- bitte auswählen -</option>
                         <? foreach( $projekte as $item ): ?>
-                            <option value="<?= $item['id'] ?>"> <?= $item['name'] ?> </option>
+                            <option <? if(isset($projektBearbeiten['id']) && $item['id']==$projektBearbeiten['id']): ?>selected<?endif;?>
+                                    value="<?= $item['id'] ?>"> <?= $item['name'] ?> </option>
                         <? endforeach; ?>
                     </select>
 
@@ -43,18 +43,25 @@
                     <h3>Projekt bearbeiten/erstellen:</h3>
                     <div class="form-group">
                         <label for="pn">Projektname:</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Projekt"
+                        <input type="text" id="name" name="name" class="form-control <?=(isset($error['name']))?'is-invalid':'' ?>" placeholder="Projekt"
                                value="<?=isset($projektBearbeiten['name']) ? $projektBearbeiten['name'] : '' ?>">
+                        <div class="invalid-feedback">
+                            <?= (isset($error['name']))?$error['name']:''?>
+                        </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="pb">Projektbeschreibung:</label>
-                        <textarea type="text" id="beschreibung" name="beschreibung" class="form-control" rows="5" placeholder="Beschreibung"><?=isset($projektBearbeiten['beschreibung']) ? $projektBearbeiten['beschreibung'] : '' ?></textarea>
+                        <textarea type="text" id="beschreibung" name="beschreibung" class="form-control <?=(isset($error['beschreibung']))?'is-invalid':'' ?>" rows="5" placeholder="Beschreibung"><?=isset($projektBearbeiten['beschreibung']) ? $projektBearbeiten['beschreibung'] : '' ?></textarea>
+                        <div class="invalid-feedback">
+                            <?= (isset($error['beschreibung']))?$error['beschreibung']:''?>
+                        </div>
                     </div>
                     <br>
                     <div class="mb-3">
                         <button id="btnSpeichern" type="submit" name="btnSpeichern" class="btn btn-primary">Speichern</button>
                         <button id="btnReset" type="submit" name="btnReset" class="btn btn-info">Reset</button>
+                        <input name="id" value="<?=isset($projektBearbeiten['id']) ? $projektBearbeiten['id'] : '' ?>" style="visibility: hidden">
                     </div>
                     </form>
                 </div>

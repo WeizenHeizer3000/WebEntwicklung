@@ -3,19 +3,18 @@
 namespace App\Controllers;
 
 use App\Models\MitgliederModel;
-use App\Models\Mitglieder_projekteModel;
+use App\Models\ProjekteModel;
 
 class Mitglieder extends BaseController
 {
     public function __construct() {
         $this->MitgliederModel = new MitgliederModel();
-        $this->Mitglieder_projekteModel = new Mitglieder_projekteModel();
+        $this->ProjekteModel = new ProjekteModel();
     }
 
     public function index_edit()
     {
         $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
-        $data['mitgliederInProjekte'] = $this->Mitglieder_projekteModel->getMitgliederInProjekte();
         echo view('templates/header');
         echo view('pages/mitglieder', $data);
         echo view('templates/footer');
@@ -36,7 +35,6 @@ class Mitglieder extends BaseController
     }
 
     public function submit_edit() {
-
         if(isset($_POST['btnReset'] )) {
             return redirect()->to(base_url('Mitglieder/index_edit'));
         }
@@ -51,6 +49,9 @@ class Mitglieder extends BaseController
                     }
                     else {
                         $this->MitgliederModel->createMitglied();
+                        if(isset($_POST['zugeordnet'])){
+                            $this->ProjekteModel->createPM();
+                        }
                     }
                     return redirect()->to(base_url('Mitglieder/index_edit'));
                 }

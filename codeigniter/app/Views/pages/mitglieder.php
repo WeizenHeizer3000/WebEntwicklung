@@ -30,13 +30,8 @@
                     <tr>
                         <td><?= $item['username'] ?></td>
                         <td><?= $item['email'] ?></td>
-                        <td><? $inProjekt = false;
-                            foreach ($mitgliederInProjekte as $id): {
-                                if ($item['id']==$id)
-                                    $inProjekt = true;
-                            }
-                            endforeach;
-                            if($inProjekt)
+                        <td><?
+                            if($item['projekteid']==session()->get('aktuellesProjekt'))
                                 echo "<input class='form-check-input' type='checkbox' value='' id='flexCheckChecked' disabled='disabled' checked>";
                             else
                                 echo "<input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' disabled='disabled'>";
@@ -57,13 +52,12 @@
             </table>
             <br>
             <br>
-            <br>
             <h3>Bearbeiten/Erstellen</h3>
             <div>
                 <?= form_open('mitglieder/submit_edit', array('role' => 'form'))?>
                 <div class="form-group mb-3 mt-3">
-                    <label for="ba">Username:</label>
-                    <input type="text" class="form-control mt-3" id="username" name="username" placeholder="Username">
+                    <label for="ba" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">E-Mail-Adresse:</label>
@@ -74,7 +68,7 @@
                     <input type="password" class="form-control" id="inputPassword" name="passwort" placeholder="Passwort">
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="" id="zugeordnet" name="zugeordnet">
                     <label class="form-check-label" for="flexCheckDefault">
                         Dem Projekt zugeordnet
                     </label>

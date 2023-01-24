@@ -27,13 +27,18 @@ class ProjekteModel extends Model {
             'erstellerid' => session()->get('id')));
     }
 
-    public function updateProjekt() {
+    public function createPM() {
+        $this->aufgabenplaner = $this->db->table('mitglieder_projekte');
+        $this->aufgabenplaner->insert(array('mitgliederid' => $_POST['username'],
+            'projekteid' => session()->get('aktuellesProjekt'),
+            'mitglied_projekt' => ''));
+    }
 
+    public function updateProjekt() {
         $this->aufgabenplaner = $this->db->table('projekte');
         $this->aufgabenplaner->where('projekte.id', $_POST['id']);
         $this->aufgabenplaner->update(array('name' => $_POST['name'],
-            'beschreibung' => $_POST['beschreibung'],
-            'erstellerid' => $_POST['erstellerid']));
+            'beschreibung' => $_POST['beschreibung']));
     }
 
     public function deleteProjekt() {

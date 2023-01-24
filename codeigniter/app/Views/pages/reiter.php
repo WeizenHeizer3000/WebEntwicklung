@@ -46,18 +46,15 @@
             </table>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
             <h3>Bearbeiten/Erstellen</h3>
             <div class="form-group mt-3">
-                <label for="br">Bezeichnung des Reiters:</label>
-                <input class="form-control mt-3" placeholder="Reiter">
+                <label for="br" class="form-label">Bezeichnung des Reiters:</label>
+                <input class="form-control" placeholder="Reiter">
             </div>
             <br>
             <div class="form-group">
-                <label for="b">Beschreibung:</label>
-                <textarea class="form-control mt-3" rows="5" placeholder="Beschreibung"></textarea>
+                <label for="b" class="form-label">Beschreibung:</label>
+                <textarea class="form-control" rows="5" placeholder="Beschreibung"></textarea>
             </div>
             <br>
             <div class="mb-3">
