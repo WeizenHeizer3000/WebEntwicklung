@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="19 file changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/AufgabenModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/AufgabenModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/MitgliederModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/MitgliederModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/ProjekteModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/ProjekteModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" afterDir="false" />
-    </list>
+    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="9 file changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +79,7 @@
       <workItem from="1672680146861" duration="8427000" />
       <workItem from="1673194353269" duration="12775000" />
       <workItem from="1673277571648" duration="32951000" />
-      <workItem from="1674478686398" duration="51606000" />
+      <workItem from="1674478686398" duration="51955000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
@@ -287,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674583989100</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="9 file changes">
+      <created>1674587632671</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1674587632671</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +317,7 @@
     <MESSAGE value="Updated Database.php" />
     <MESSAGE value="changes" />
     <MESSAGE value="19 file changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="19 file changes" />
+    <MESSAGE value="9 file changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="9 file changes" />
   </component>
 </project>
