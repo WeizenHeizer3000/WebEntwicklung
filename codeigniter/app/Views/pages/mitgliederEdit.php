@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div <? if(session()->get('id') != $mitglieder['id']) : ?>style="visibility: hidden"<? endif ?> class="form-group row mb-2">
+                <div <? if(isset($mitglieder['id']) && session()->get('id') != $mitglieder['id']) : ?>style="visibility: hidden"<? endif ?> class="form-group row mb-2">
                     <label for="passwort" class="col-sm-2 col-form-label">Passwort:</label>
                     <div class="col-sm-10">
                         <input <? if($todo == 2) : ?>disabled='disabled'<? endif ?> type="password" class="form-control <?=(isset($error['passwort']))?'is-invalid':'' ?>" id="passwort" name="passwort" placeholder="passwort"

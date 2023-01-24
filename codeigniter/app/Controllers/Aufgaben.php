@@ -62,7 +62,6 @@ class Aufgaben extends BaseController
                         $neusteAufgabe = $this->AufgabenModel->getNeusteAufgabe();
                         foreach( $_POST['zustaendige'] as $zustaendige)
                             $this->AufgabenModel->createMitglied_aufgabe($zustaendige, $neusteAufgabe);
-
                     }
                     return redirect()->to(base_url('aufgaben/index_edit/'));
 
@@ -78,11 +77,6 @@ class Aufgaben extends BaseController
             }else{
                 return redirect()->to(base_url('aufgaben/index_edit'));
             }
-        }
-        // Aufgabe löschen
-        elseif (isset($_POST['btnLoeschen'])) {
-            $this->AufgabenModel->deleteAufgabe();
-            return redirect()->to(base_url('aufgaben/index_edit/'));
         }
         // Reset
         elseif(isset($_POST['btnReset'] )) {

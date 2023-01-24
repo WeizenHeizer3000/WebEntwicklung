@@ -35,6 +35,7 @@ class Mitglieder extends BaseController
     }
 
     public function submit_edit() {
+
         if(isset($_POST['btnReset'] )) {
             return redirect()->to(base_url('Mitglieder/index_edit'));
         }
@@ -48,9 +49,11 @@ class Mitglieder extends BaseController
                         $this->MitgliederModel->updateMitglied();
                     }
                     else {
+
                         $this->MitgliederModel->createMitglied();
                         if(isset($_POST['zugeordnet'])){
-                            $this->ProjekteModel->createPM();
+                            $neustesMitglied = $this->MitgliederModel->getNeustesMitglied();
+                            $this->ProjekteModel->createPM($neustesMitglied);
                         }
                     }
                     return redirect()->to(base_url('Mitglieder/index_edit'));
@@ -69,7 +72,7 @@ class Mitglieder extends BaseController
         }
         // Mitglied löschen
         elseif (isset($_POST['btnLoeschen'])) {
-            $this->MitgliederModel->deleteMitglied();
+            $this->MitgliederModel->deleteMitglied($_POST['id']);
             return redirect()->to(base_url('mitglieder/index_edit/'));
         }
         // Abbrechen

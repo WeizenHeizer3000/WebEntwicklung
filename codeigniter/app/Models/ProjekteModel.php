@@ -27,9 +27,9 @@ class ProjekteModel extends Model {
             'erstellerid' => session()->get('id')));
     }
 
-    public function createPM() {
+    public function createPM($neustesMitglied) {
         $this->aufgabenplaner = $this->db->table('mitglieder_projekte');
-        $this->aufgabenplaner->insert(array('mitgliederid' => $_POST['username'],
+        $this->aufgabenplaner->insert(array('mitgliederid' => $neustesMitglied,
             'projekteid' => session()->get('aktuellesProjekt'),
             'mitglied_projekt' => ''));
     }

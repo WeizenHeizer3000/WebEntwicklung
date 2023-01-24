@@ -57,11 +57,9 @@ class AufgabenModel extends Model {
                 'aufgabenid' => $aufgaben_id,
                 'mitglied_aufgabe' => ''));
         }
-
     }
 
     public function updateAufgabe() {
-
         $this->aufgabenplaner = $this->db->table('aufgaben');
         $this->aufgabenplaner->where('aufgaben.id', $_POST['id']);
         $this->aufgabenplaner->update(array('name' => $_POST['name'],

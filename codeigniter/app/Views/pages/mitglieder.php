@@ -68,7 +68,7 @@
                     <input type="password" class="form-control" id="inputPassword" name="passwort" placeholder="Passwort">
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="zugeordnet" name="zugeordnet">
+                    <input class="form-check-input" type="checkbox" value="1" id="zugeordnet" name="zugeordnet">
                     <label class="form-check-label" for="flexCheckDefault">
                         Dem Projekt zugeordnet
                     </label>

@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="changes">
+    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="19 file changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Config/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Config/Validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Projekte.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/AufgabenModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/AufgabenModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/MitgliederModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/MitgliederModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/Mitglieder_aufgabenModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/Mitglieder_projekteModel.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/ProjekteModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/ProjekteModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Models/ReiterModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Models/ReiterModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/fehler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder_array.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/projekte.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/projekte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/registrierung.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +89,7 @@
       <workItem from="1672680146861" duration="8427000" />
       <workItem from="1673194353269" duration="12775000" />
       <workItem from="1673277571648" duration="32951000" />
-      <workItem from="1674478686398" duration="48443000" />
+      <workItem from="1674478686398" duration="51606000" />
     </task>
     <task id="LOCAL-00001" summary="change 1">
       <created>1668767385623</created>
@@ -290,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674495551369</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="19 file changes">
+      <created>1674583989100</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1674583989100</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +319,7 @@
     <MESSAGE value="codeigniter 3" />
     <MESSAGE value="Updated Database.php" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="19 file changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="19 file changes" />
   </component>
 </project>

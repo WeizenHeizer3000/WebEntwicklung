@@ -38,7 +38,6 @@ class MitgliederModel extends Model {
     }
 
     public function updateMitglied() {
-
         $this->aufgabenplaner = $this->db->table('mitglieder');
         $this->aufgabenplaner->where('mitglieder.id', $_POST['id']);
         $this->aufgabenplaner->update(array('username' => $_POST['username'],
@@ -46,9 +45,21 @@ class MitgliederModel extends Model {
             'passwort' => $_POST['passwort']));
     }
 
-    public function deleteMitglied() {
+    public function getNeustesMitglied(){
         $this->aufgabenplaner = $this->db->table('mitglieder');
-        $this->aufgabenplaner->where('mitglieder.id', $_POST['id']);
+        $this->aufgabenplaner->select('id');
+        $this->aufgabenplaner->orderBy('id DESC');
+        $this->aufgabenplaner->limit(1);
+        $result = $this->aufgabenplaner->get();
+        return $result->getRowArray();
+    }
+
+    public function deleteMitglied($id=null) {
+        $this->aufgabenplaner = $this->db->table('mitglieder_projekte');
+        $this->aufgabenplaner->where('mitgliederid', $id);
+        $this->aufgabenplaner->delete();
+        $this->aufgabenplaner = $this->db->table('mitglieder');
+        $this->aufgabenplaner->where('mitglieder.id', $id);
         $this->aufgabenplaner->delete();
     }
 }

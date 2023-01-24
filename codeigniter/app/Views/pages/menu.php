@@ -1,6 +1,6 @@
 <ul class="list-group">
     <li class="list-group-item">
-        <a class="text-decoration-none" href="<?php echo site_url('Login/index')?>">Login</a>
+        <a class="text-decoration-none" href="<?php echo site_url('Login/index')?>">Logout</a>
     </li>
     <li class="list-group-item">
         <a class="text-decoration-none" href="<?php echo site_url('Projekte/index_edit')?>">Projekte</a>
