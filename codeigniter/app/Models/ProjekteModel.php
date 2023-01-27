@@ -20,6 +20,22 @@ class ProjekteModel extends Model {
             return $result->getResultArray();
     }
 
+    public function getProjektName($projekte_id = NULL) {
+        $this->aufgabenplaner = $this->db->table('projekte');
+        $this->aufgabenplaner->select('name');
+
+        IF ($projekte_id != NULL)
+            $this->aufgabenplaner->where('projekte.id', $projekte_id);
+
+        $this->aufgabenplaner->orderBy('name');
+        $result = $this->aufgabenplaner->get();
+
+        if ($projekte_id != NULL)
+            return $result->getRowArray();
+        else
+            return $result->getResultArray();
+    }
+
     public function createProjekt() {
         $this->aufgabenplaner = $this->db->table('projekte');
         $this->aufgabenplaner->insert(array('name' => $_POST['name'],

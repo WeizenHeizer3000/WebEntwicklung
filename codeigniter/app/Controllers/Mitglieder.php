@@ -72,6 +72,8 @@ class Mitglieder extends BaseController
         }
         // Mitglied löschen
         elseif (isset($_POST['btnLoeschen'])) {
+
+            
             $this->MitgliederModel->deleteMitglied($_POST['id']);
             return redirect()->to(base_url('mitglieder/index_edit/'));
         }

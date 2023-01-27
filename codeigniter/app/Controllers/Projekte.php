@@ -38,6 +38,10 @@ class Projekte extends BaseController
         }
         if(isset($_POST['btnAuswaehlen'])){
             $this->session->set('aktuellesProjekt', $id);
+
+            $name = $this->ProjekteModel->getProjektName($id);
+            $this->session->set('aktuellesProjektName', $name['name']);
+
             return redirect()->to(base_url('projekte/index_edit/'));
         }
     }

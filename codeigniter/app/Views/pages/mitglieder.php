@@ -10,9 +10,9 @@
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("menu.php");?>
         </div>
         <div class="col-8">
+            <?php include("menu.php");?>
             <table class="table table-responsive table-hover d-md-table"
                 data-show-columns="true"
                 data-show-toggle="true"

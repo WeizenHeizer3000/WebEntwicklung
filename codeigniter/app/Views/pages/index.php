@@ -10,9 +10,9 @@
     </header>
     <div class="row mt-4">
         <div class="col-2">
-            <?php include("menu.php");?>
         </div>
         <div class="col">
+            <?php include("menu.php");?>
             <div class="row">
                 <div class="col">
                     <div class="card">
