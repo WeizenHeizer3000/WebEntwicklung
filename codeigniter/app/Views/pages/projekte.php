@@ -15,11 +15,6 @@
         <div class="col-8">
             <?php include("menu.php");?>
             <div>
-                <header class="p-3"
-                <h1 class="display-5" Projekt auswählen </h1>
-                </header>
-            </div>
-            <div>
                 <h3>Projekt auswählen:</h3>
                 <div class="form-group">
                     <form action="ced_edit" method="post">
@@ -37,6 +32,12 @@
                     </div>
                     </form>
                 </div>
+
+                <script>
+                    function confirmation() {
+                        var check = confirm('Wollen Sie den Eintrag wirklich löschen?');
+                    }
+                </script>
 
                 <div class="form-group">
                     <form action="submit_edit" method="post">
