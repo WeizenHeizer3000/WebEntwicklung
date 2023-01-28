@@ -28,20 +28,10 @@
                     <div class="mb-3">
                         <button id="btnAuswählen" type="submit" name="btnAuswaehlen" class="btn btn-primary">Auswählen</button>
                         <button id="btnBearbeiten" type="submit" name="btnBearbeiten" class="btn btn-primary">Bearbeiten</button>
-                        <button onclick="confirmation()" id="btnLoeschen" type="submit" name="btnLoeschen" class="btn btn-danger">Löschen</button>
+                        <button id="btnLoeschen" type="submit" name="btnLoeschen" class="btn btn-danger">Löschen</button>
                     </div>
                     </form>
                 </div>
-
-                <script>
-                    function confirmation() {
-                        var check = confirm('Wollen Sie den Eintrag wirklich löschen?');
-                        if(check){
-                        }
-                        else{
-                        }
-                    }
-                </script>
 
                 <div class="form-group">
                     <form action="submit_edit" method="post">

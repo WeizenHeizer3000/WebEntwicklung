@@ -16,19 +16,36 @@ class Aufgaben extends BaseController
 
     public function index_edit()
     {
-        $data['reiter'] = $this->ReiterModel->getReiter();
-        $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
-        $data['aufgaben'] = $this->AufgabenModel->getAufgaben();
+        if(session()->get('delA') != null){
+            $data['id'] = session()->get('delA');
+            $this->session->set('delA', null);
+            echo view('templates/header');
+            echo view('pages/confirmation', $data);
+            echo view('templates/footer');
+        }
+        else{
+            $data['reiter'] = $this->ReiterModel->getReiter();
+            $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
+            $data['aufgaben'] = $this->AufgabenModel->getAufgaben();
 
-        echo view('templates/header');
-        echo view('pages/aufgaben', $data);
-        echo view('templates/footer');
+            echo view('templates/header');
+            echo view('pages/aufgaben', $data);
+            echo view('templates/footer');
+        }
+    }
+
+    public function delete(){
+        if(isset($_POST['btnDelete'])){
+            $id=$_POST['id'];
+            $this->AufgabenModel->deleteAufgabe($id);
+        }
+        return redirect()->to(base_url('aufgaben/index_edit/'));
     }
 
     public function ced_edit($id = 0, $todo = 0) {
         // Löschen
         if($todo == 2){
-            $this->AufgabenModel->deleteAufgabe($id);
+            $this->session->set('delA', $id);
             return redirect()->to(base_url('aufgaben/index_edit/'));
         }
         // Bearbeiten

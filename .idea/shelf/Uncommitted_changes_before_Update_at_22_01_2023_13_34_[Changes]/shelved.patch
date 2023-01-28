@@ -1,0 +1,76 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,31 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="codeigniter 3">
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Models/AufgabenModel.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Models/MitgliederModel.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Models/Mitglieder_projekteModel.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Models/ReiterModel.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/fehler.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitgliederEdit.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
++    <list default="true" id="bd1436ea-2113-462c-a8be-760729699a3a" name="Changes" comment="uebung 6">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Config/Database.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Aufgaben.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/BaseController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Login.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Mitglieder.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Controllers/Reiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Controllers/Reiter.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/aufgaben_array.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/databaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/databaseConnection.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/login.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/make_tbl.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/menu.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/mitglieder.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/codeigniter/app/Views/pages/reiter_array.php" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -103,6 +80,8 @@
+       <workItem from="1672680146861" duration="8427000" />
+       <workItem from="1673194353269" duration="12775000" />
+       <workItem from="1673277571648" duration="32951000" />
++      <workItem from="1673354410136" duration="563000" />
++      <workItem from="1674390540411" duration="311000" />
+     </task>
+     <task id="LOCAL-00001" summary="change 1">
+       <created>1668767385623</created>
+@@ -195,7 +174,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1672689400238</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="uebung 6">
++      <created>1673354464615</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1673354464615</updated>
++    </task>
++    <option name="localTasksCounter" value="15" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -225,6 +211,7 @@
+     <MESSAGE value="codeigniter" />
+     <MESSAGE value="codeigniter 2" />
+     <MESSAGE value="codeigniter 3" />
+-    <option name="LAST_COMMIT_MESSAGE" value="codeigniter 3" />
++    <MESSAGE value="uebung 6" />
++    <option name="LAST_COMMIT_MESSAGE" value="uebung 6" />
+   </component>
+ </project>
+\ No newline at end of file

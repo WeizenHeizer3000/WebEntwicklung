@@ -18,15 +18,26 @@ class Projekte extends BaseController
         echo view('templates/footer');
     }
 
+    public function delete(){
+        if(isset($_POST['btnDelete'])){
+            $id=$_POST['id'];
+            $this->ProjekteModel->deleteProjekt();
+            if($id==session()->get('aktuellesProjekt')){
+                $this->session->set('aktuellesProjekt', null);
+                $this->session->set('aktuellesProjektName', null);
+            }
+        }
+        return redirect()->to(base_url('projekte/index_edit/'));
+    }
+
     public function ced_edit($id = 0, $todo = 0) {
         // Todo: 0 = create, 1 = Bearbeiten, 2 = löschen
         $id=$_POST['id'];
         if(isset($_POST['btnLoeschen'])){
-            $this->ProjekteModel->deleteProjekt();
-            if($id==session()->get('aktuellesProjekt')){
-                $this->session->set('aktuellesProjekt', null);
-            }
-            return redirect()->to(base_url('projekte/index_edit/'));
+            $data['id'] = $id;
+            echo view( 'templates/header');
+            echo view( 'pages/confirmation', $data);
+            echo view( 'templates/footer');
         }
         if(isset($_POST['btnBearbeiten'])){
             // Projekt bearbeiten oder löschen
@@ -42,6 +53,9 @@ class Projekte extends BaseController
             $name = $this->ProjekteModel->getProjektName($id);
             $this->session->set('aktuellesProjektName', $name['name']);
 
+            return redirect()->to(base_url('projekte/index_edit/'));
+        }
+        if(isset($_POST['btnCancel'])){
             return redirect()->to(base_url('projekte/index_edit/'));
         }
     }

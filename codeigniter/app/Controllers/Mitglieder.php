@@ -14,14 +14,22 @@ class Mitglieder extends BaseController
 
     public function index_edit()
     {
-        $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
-        echo view('templates/header');
-        echo view('pages/mitglieder', $data);
-        echo view('templates/footer');
+        if(session()->get('delM') != null){
+            $data['id'] = session()->get('delM');
+            $this->session->set('delM', null);
+            echo view('templates/header');
+            echo view('pages/confirmation', $data);
+            echo view('templates/footer');
+        }
+        else {
+            $data['mitglieder'] = $this->MitgliederModel->getMitglieder();
+            echo view('templates/header');
+            echo view('pages/mitglieder', $data);
+            echo view('templates/footer');
+        }
     }
 
     public function ced_edit($id = 0, $todo = 0) {
-
         // Todo: 0 = create, 1 = Bearbeiten, 2 = löschen
         $data['todo'] = $todo;
         // Person bearbeiten oder löschen
@@ -31,11 +39,9 @@ class Mitglieder extends BaseController
         echo view( 'templates/header');
         echo view( 'pages/mitgliederEdit', $data);
         echo view( 'templates/footer');
-
     }
 
     public function submit_edit() {
-
         if(isset($_POST['btnReset'] )) {
             return redirect()->to(base_url('Mitglieder/index_edit'));
         }
@@ -58,7 +64,6 @@ class Mitglieder extends BaseController
                     }
                     return redirect()->to(base_url('Mitglieder/index_edit'));
                 }
-
             }else {
                 // Daten zurück ans Formular übergeben
                 $data['mitglieder'] = $_POST;
@@ -68,18 +73,24 @@ class Mitglieder extends BaseController
                 echo view( 'pages/mitgliederEdit', $data);
                 echo view('templates/footer');
             }
-
         }
         // Mitglied löschen
         elseif (isset($_POST['btnLoeschen'])) {
-
-            
-            $this->MitgliederModel->deleteMitglied($_POST['id']);
+            $id=$_POST['id'];
+            $this->session->set('delM', $id);
             return redirect()->to(base_url('mitglieder/index_edit/'));
         }
         // Abbrechen
         elseif (isset($_POST['btnAbbrechen'])) {
             return redirect()->to(base_url('mitglieder/index_edit/'));
         }
+    }
+
+    public function delete(){
+        if(isset($_POST['btnDelete'])){
+            $id=$_POST['id'];
+            $this->MitgliederModel->deleteMitglied($id);
+        }
+        return redirect()->to(base_url('mitglieder/index_edit/'));
     }
 }
